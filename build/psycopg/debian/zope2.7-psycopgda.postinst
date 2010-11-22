@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+PRODUCT=ZPsycopgDA
+DESTDIR=/usr/lib/zope2.7/lib/python/Products
+PYTHON=/usr/bin/python2.3
+PYLIB=$(echo $PYTHON | sed -e 's,/bin/,/lib/,')
+
+case "$1" in
+  configure)
+    mkdir -p $DESTDIR
+    cp -rs /usr/share/zope/ZPsycopgDA $DESTDIR/$PRODUCT
+    $PYTHON -O $PYLIB/compileall.py -q $DESTDIR/$PRODUCT
+    $PYTHON $PYLIB/compileall.py -q $DESTDIR/$PRODUCT
+esac

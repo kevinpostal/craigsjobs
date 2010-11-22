@@ -1,0 +1,8 @@
+ZPsycopgDA (in the Debian zope-psycopgda package) is a Zope Database
+Adapter based on the psycopg Python/PostgreSQL driver. You'll find
+more information and documentation in the pythonX.Y-psycopg package,
+where X.Y is the version of your installed Python.
+
+For a Zope 2.6 installation, please consult the documentation in the
+python2.2-psycopg package. Details for ZPsycopgDA for Zope 2.7 are found in
+the documentation of the python2.3-psycopg package.

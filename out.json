@@ -1,0 +1,3218 @@
+[
+{
+"pk": 0,
+"model": "sites.site",
+"fields": {
+"domain": "http://abilene.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Abilene"
+}
+},
+{
+"pk": 1,
+"model": "sites.site",
+"fields": {
+"domain": "http://akroncanton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Akron / canton"
+}
+},
+{
+"pk": 2,
+"model": "sites.site",
+"fields": {
+"domain": "http://albany.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Albany"
+}
+},
+{
+"pk": 3,
+"model": "sites.site",
+"fields": {
+"domain": "http://albanyga.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Albany, ga"
+}
+},
+{
+"pk": 4,
+"model": "sites.site",
+"fields": {
+"domain": "http://albuquerque.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Albuquerque"
+}
+},
+{
+"pk": 5,
+"model": "sites.site",
+"fields": {
+"domain": "http://altoona.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Altoona-johnstown"
+}
+},
+{
+"pk": 6,
+"model": "sites.site",
+"fields": {
+"domain": "http://amarillo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Amarillo"
+}
+},
+{
+"pk": 7,
+"model": "sites.site",
+"fields": {
+"domain": "http://ames.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ames, ia"
+}
+},
+{
+"pk": 8,
+"model": "sites.site",
+"fields": {
+"domain": "http://anchorage.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Anchorage / mat-su"
+}
+},
+{
+"pk": 9,
+"model": "sites.site",
+"fields": {
+"domain": "http://annarbor.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ann arbor"
+}
+},
+{
+"pk": 10,
+"model": "sites.site",
+"fields": {
+"domain": "http://annapolis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Annapolis"
+}
+},
+{
+"pk": 11,
+"model": "sites.site",
+"fields": {
+"domain": "http://appleton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Appleton"
+}
+},
+{
+"pk": 12,
+"model": "sites.site",
+"fields": {
+"domain": "http://asheville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Asheville"
+}
+},
+{
+"pk": 13,
+"model": "sites.site",
+"fields": {
+"domain": "http://ashtabula.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ashtabula"
+}
+},
+{
+"pk": 14,
+"model": "sites.site",
+"fields": {
+"domain": "http://athensga.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Athens, ga"
+}
+},
+{
+"pk": 15,
+"model": "sites.site",
+"fields": {
+"domain": "http://athensohio.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Athens, OH"
+}
+},
+{
+"pk": 16,
+"model": "sites.site",
+"fields": {
+"domain": "http://atlanta.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Atlanta"
+}
+},
+{
+"pk": 17,
+"model": "sites.site",
+"fields": {
+"domain": "http://auburn.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Auburn"
+}
+},
+{
+"pk": 18,
+"model": "sites.site",
+"fields": {
+"domain": "http://augusta.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Augusta"
+}
+},
+{
+"pk": 19,
+"model": "sites.site",
+"fields": {
+"domain": "http://austin.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Austin"
+}
+},
+{
+"pk": 20,
+"model": "sites.site",
+"fields": {
+"domain": "http://bakersfield.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bakersfield"
+}
+},
+{
+"pk": 21,
+"model": "sites.site",
+"fields": {
+"domain": "http://baltimore.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Baltimore"
+}
+},
+{
+"pk": 22,
+"model": "sites.site",
+"fields": {
+"domain": "http://batonrouge.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Baton rouge"
+}
+},
+{
+"pk": 23,
+"model": "sites.site",
+"fields": {
+"domain": "http://battlecreek.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Battle creek"
+}
+},
+{
+"pk": 24,
+"model": "sites.site",
+"fields": {
+"domain": "http://beaumont.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Beaumont / port arthur"
+}
+},
+{
+"pk": 25,
+"model": "sites.site",
+"fields": {
+"domain": "http://bellingham.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bellingham"
+}
+},
+{
+"pk": 26,
+"model": "sites.site",
+"fields": {
+"domain": "http://bemidji.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bemidji"
+}
+},
+{
+"pk": 27,
+"model": "sites.site",
+"fields": {
+"domain": "http://bend.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bend"
+}
+},
+{
+"pk": 28,
+"model": "sites.site",
+"fields": {
+"domain": "http://billings.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Billings"
+}
+},
+{
+"pk": 29,
+"model": "sites.site",
+"fields": {
+"domain": "http://binghamton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Binghamton"
+}
+},
+{
+"pk": 30,
+"model": "sites.site",
+"fields": {
+"domain": "http://bham.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Birmingham, al"
+}
+},
+{
+"pk": 31,
+"model": "sites.site",
+"fields": {
+"domain": "http://bismarck.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bismarck"
+}
+},
+{
+"pk": 32,
+"model": "sites.site",
+"fields": {
+"domain": "http://bloomington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bloomington, in"
+}
+},
+{
+"pk": 33,
+"model": "sites.site",
+"fields": {
+"domain": "http://bn.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bloomington-normal"
+}
+},
+{
+"pk": 34,
+"model": "sites.site",
+"fields": {
+"domain": "http://boise.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Boise"
+}
+},
+{
+"pk": 35,
+"model": "sites.site",
+"fields": {
+"domain": "http://boone.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Boone"
+}
+},
+{
+"pk": 36,
+"model": "sites.site",
+"fields": {
+"domain": "http://boston.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Boston"
+}
+},
+{
+"pk": 37,
+"model": "sites.site",
+"fields": {
+"domain": "http://boulder.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Boulder"
+}
+},
+{
+"pk": 38,
+"model": "sites.site",
+"fields": {
+"domain": "http://bgky.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bowling green"
+}
+},
+{
+"pk": 39,
+"model": "sites.site",
+"fields": {
+"domain": "http://bozeman.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Bozeman"
+}
+},
+{
+"pk": 40,
+"model": "sites.site",
+"fields": {
+"domain": "http://brainerd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Brainerd"
+}
+},
+{
+"pk": 41,
+"model": "sites.site",
+"fields": {
+"domain": "http://brownsville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Brownsville"
+}
+},
+{
+"pk": 42,
+"model": "sites.site",
+"fields": {
+"domain": "http://brunswick.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Brunswick, ga"
+}
+},
+{
+"pk": 43,
+"model": "sites.site",
+"fields": {
+"domain": "http://buffalo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Buffalo"
+}
+},
+{
+"pk": 44,
+"model": "sites.site",
+"fields": {
+"domain": "http://butte.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Butte"
+}
+},
+{
+"pk": 45,
+"model": "sites.site",
+"fields": {
+"domain": "http://capecod.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cape cod / islands"
+}
+},
+{
+"pk": 46,
+"model": "sites.site",
+"fields": {
+"domain": "http://catskills.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Catskills"
+}
+},
+{
+"pk": 47,
+"model": "sites.site",
+"fields": {
+"domain": "http://cedarrapids.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cedar rapids"
+}
+},
+{
+"pk": 48,
+"model": "sites.site",
+"fields": {
+"domain": "http://cnj.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Central nj"
+}
+},
+{
+"pk": 49,
+"model": "sites.site",
+"fields": {
+"domain": "http://cenla.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Central louisiana"
+}
+},
+{
+"pk": 50,
+"model": "sites.site",
+"fields": {
+"domain": "http://centralmich.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Central michigan"
+}
+},
+{
+"pk": 51,
+"model": "sites.site",
+"fields": {
+"domain": "http://chambana.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Champaign urbana"
+}
+},
+{
+"pk": 52,
+"model": "sites.site",
+"fields": {
+"domain": "http://charleston.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Charleston, sc"
+}
+},
+{
+"pk": 53,
+"model": "sites.site",
+"fields": {
+"domain": "http://charlestonwv.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Charleston, wv"
+}
+},
+{
+"pk": 54,
+"model": "sites.site",
+"fields": {
+"domain": "http://charlotte.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Charlotte"
+}
+},
+{
+"pk": 55,
+"model": "sites.site",
+"fields": {
+"domain": "http://charlottesville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Charlottesville"
+}
+},
+{
+"pk": 56,
+"model": "sites.site",
+"fields": {
+"domain": "http://chattanooga.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Chattanooga"
+}
+},
+{
+"pk": 57,
+"model": "sites.site",
+"fields": {
+"domain": "http://chautauqua.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Chautauqua"
+}
+},
+{
+"pk": 58,
+"model": "sites.site",
+"fields": {
+"domain": "http://chicago.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Chicago"
+}
+},
+{
+"pk": 59,
+"model": "sites.site",
+"fields": {
+"domain": "http://chico.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Chico"
+}
+},
+{
+"pk": 60,
+"model": "sites.site",
+"fields": {
+"domain": "http://chillicothe.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Chillicothe"
+}
+},
+{
+"pk": 61,
+"model": "sites.site",
+"fields": {
+"domain": "http://cincinnati.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cincinnati, oh"
+}
+},
+{
+"pk": 62,
+"model": "sites.site",
+"fields": {
+"domain": "http://clarksville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Clarksville, tn"
+}
+},
+{
+"pk": 63,
+"model": "sites.site",
+"fields": {
+"domain": "http://cleveland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cleveland"
+}
+},
+{
+"pk": 64,
+"model": "sites.site",
+"fields": {
+"domain": "http://clovis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Clovis / portales"
+}
+},
+{
+"pk": 65,
+"model": "sites.site",
+"fields": {
+"domain": "http://collegestation.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "College station"
+}
+},
+{
+"pk": 66,
+"model": "sites.site",
+"fields": {
+"domain": "http://cosprings.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Colorado springs"
+}
+},
+{
+"pk": 67,
+"model": "sites.site",
+"fields": {
+"domain": "http://columbiamo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Columbia / jeff city"
+}
+},
+{
+"pk": 68,
+"model": "sites.site",
+"fields": {
+"domain": "http://columbia.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Columbia, sc"
+}
+},
+{
+"pk": 69,
+"model": "sites.site",
+"fields": {
+"domain": "http://columbus.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Columbus"
+}
+},
+{
+"pk": 70,
+"model": "sites.site",
+"fields": {
+"domain": "http://columbusga.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Columbus, ga"
+}
+},
+{
+"pk": 71,
+"model": "sites.site",
+"fields": {
+"domain": "http://cookeville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cookeville"
+}
+},
+{
+"pk": 72,
+"model": "sites.site",
+"fields": {
+"domain": "http://corpuschristi.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Corpus christi"
+}
+},
+{
+"pk": 73,
+"model": "sites.site",
+"fields": {
+"domain": "http://corvallis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Corvallis/albany"
+}
+},
+{
+"pk": 74,
+"model": "sites.site",
+"fields": {
+"domain": "http://chambersburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Cumberland valley"
+}
+},
+{
+"pk": 75,
+"model": "sites.site",
+"fields": {
+"domain": "http://dallas.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Dallas / fort worth"
+}
+},
+{
+"pk": 76,
+"model": "sites.site",
+"fields": {
+"domain": "http://danville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Danville"
+}
+},
+{
+"pk": 77,
+"model": "sites.site",
+"fields": {
+"domain": "http://dayton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Dayton / springfield"
+}
+},
+{
+"pk": 78,
+"model": "sites.site",
+"fields": {
+"domain": "http://daytona.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Daytona beach"
+}
+},
+{
+"pk": 79,
+"model": "sites.site",
+"fields": {
+"domain": "http://decatur.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Decatur, il"
+}
+},
+{
+"pk": 80,
+"model": "sites.site",
+"fields": {
+"domain": "http://nacogdoches.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Deep east texas"
+}
+},
+{
+"pk": 81,
+"model": "sites.site",
+"fields": {
+"domain": "http://delrio.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Del rio / eagle pass"
+}
+},
+{
+"pk": 82,
+"model": "sites.site",
+"fields": {
+"domain": "http://delaware.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Delaware"
+}
+},
+{
+"pk": 83,
+"model": "sites.site",
+"fields": {
+"domain": "http://denver.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Denver"
+}
+},
+{
+"pk": 84,
+"model": "sites.site",
+"fields": {
+"domain": "http://desmoines.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Des moines"
+}
+},
+{
+"pk": 85,
+"model": "sites.site",
+"fields": {
+"domain": "http://detroit.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Detroit metro"
+}
+},
+{
+"pk": 86,
+"model": "sites.site",
+"fields": {
+"domain": "http://dothan.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Dothan, al"
+}
+},
+{
+"pk": 87,
+"model": "sites.site",
+"fields": {
+"domain": "http://dubuque.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Dubuque"
+}
+},
+{
+"pk": 88,
+"model": "sites.site",
+"fields": {
+"domain": "http://duluth.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Duluth / superior"
+}
+},
+{
+"pk": 89,
+"model": "sites.site",
+"fields": {
+"domain": "http://eastidaho.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "East idaho"
+}
+},
+{
+"pk": 90,
+"model": "sites.site",
+"fields": {
+"domain": "http://eastoregon.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "East oregon"
+}
+},
+{
+"pk": 91,
+"model": "sites.site",
+"fields": {
+"domain": "http://eastco.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern co"
+}
+},
+{
+"pk": 92,
+"model": "sites.site",
+"fields": {
+"domain": "http://newlondon.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern ct"
+}
+},
+{
+"pk": 93,
+"model": "sites.site",
+"fields": {
+"domain": "http://eastnc.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern nc"
+}
+},
+{
+"pk": 94,
+"model": "sites.site",
+"fields": {
+"domain": "http://eastky.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern kentucky"
+}
+},
+{
+"pk": 95,
+"model": "sites.site",
+"fields": {
+"domain": "http://martinsburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern panhandle"
+}
+},
+{
+"pk": 96,
+"model": "sites.site",
+"fields": {
+"domain": "http://easternshore.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eastern shore"
+}
+},
+{
+"pk": 97,
+"model": "sites.site",
+"fields": {
+"domain": "http://eauclaire.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eau claire"
+}
+},
+{
+"pk": 98,
+"model": "sites.site",
+"fields": {
+"domain": "http://elpaso.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "El paso"
+}
+},
+{
+"pk": 99,
+"model": "sites.site",
+"fields": {
+"domain": "http://elko.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Elko"
+}
+},
+{
+"pk": 100,
+"model": "sites.site",
+"fields": {
+"domain": "http://elmira.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Elmira-corning"
+}
+},
+{
+"pk": 101,
+"model": "sites.site",
+"fields": {
+"domain": "http://erie.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Erie, pa"
+}
+},
+{
+"pk": 102,
+"model": "sites.site",
+"fields": {
+"domain": "http://eugene.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Eugene"
+}
+},
+{
+"pk": 103,
+"model": "sites.site",
+"fields": {
+"domain": "http://evansville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Evansville"
+}
+},
+{
+"pk": 104,
+"model": "sites.site",
+"fields": {
+"domain": "http://fairbanks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fairbanks"
+}
+},
+{
+"pk": 105,
+"model": "sites.site",
+"fields": {
+"domain": "http://fargo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fargo / moorhead"
+}
+},
+{
+"pk": 106,
+"model": "sites.site",
+"fields": {
+"domain": "http://farmington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Farmington, nm"
+}
+},
+{
+"pk": 107,
+"model": "sites.site",
+"fields": {
+"domain": "http://fayetteville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fayetteville"
+}
+},
+{
+"pk": 108,
+"model": "sites.site",
+"fields": {
+"domain": "http://fayar.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fayetteville, ar"
+}
+},
+{
+"pk": 109,
+"model": "sites.site",
+"fields": {
+"domain": "http://fingerlakes.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Finger lakes"
+}
+},
+{
+"pk": 110,
+"model": "sites.site",
+"fields": {
+"domain": "http://flagstaff.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Flagstaff / sedona"
+}
+},
+{
+"pk": 111,
+"model": "sites.site",
+"fields": {
+"domain": "http://flint.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Flint"
+}
+},
+{
+"pk": 112,
+"model": "sites.site",
+"fields": {
+"domain": "http://shoals.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Florence / muscle shoals"
+}
+},
+{
+"pk": 113,
+"model": "sites.site",
+"fields": {
+"domain": "http://florencesc.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Florence, sc"
+}
+},
+{
+"pk": 114,
+"model": "sites.site",
+"fields": {
+"domain": "http://keys.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Florida keys"
+}
+},
+{
+"pk": 115,
+"model": "sites.site",
+"fields": {
+"domain": "http://fortcollins.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fort collins / north co"
+}
+},
+{
+"pk": 116,
+"model": "sites.site",
+"fields": {
+"domain": "http://fortdodge.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fort dodge"
+}
+},
+{
+"pk": 117,
+"model": "sites.site",
+"fields": {
+"domain": "http://fortsmith.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fort smith, ar"
+}
+},
+{
+"pk": 118,
+"model": "sites.site",
+"fields": {
+"domain": "http://fortwayne.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fort wayne"
+}
+},
+{
+"pk": 119,
+"model": "sites.site",
+"fields": {
+"domain": "http://frederick.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Frederick"
+}
+},
+{
+"pk": 120,
+"model": "sites.site",
+"fields": {
+"domain": "http://fredericksburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fredericksburg"
+}
+},
+{
+"pk": 121,
+"model": "sites.site",
+"fields": {
+"domain": "http://fresno.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Fresno / madera"
+}
+},
+{
+"pk": 122,
+"model": "sites.site",
+"fields": {
+"domain": "http://fortmyers.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ft myers / sw florida"
+}
+},
+{
+"pk": 123,
+"model": "sites.site",
+"fields": {
+"domain": "http://gadsden.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Gadsden-anniston"
+}
+},
+{
+"pk": 124,
+"model": "sites.site",
+"fields": {
+"domain": "http://gainesville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Gainesville"
+}
+},
+{
+"pk": 125,
+"model": "sites.site",
+"fields": {
+"domain": "http://galveston.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Galveston"
+}
+},
+{
+"pk": 126,
+"model": "sites.site",
+"fields": {
+"domain": "http://glensfalls.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Glens falls"
+}
+},
+{
+"pk": 127,
+"model": "sites.site",
+"fields": {
+"domain": "http://goldcountry.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Gold country"
+}
+},
+{
+"pk": 128,
+"model": "sites.site",
+"fields": {
+"domain": "http://grandforks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Grand forks"
+}
+},
+{
+"pk": 129,
+"model": "sites.site",
+"fields": {
+"domain": "http://grandisland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Grand island"
+}
+},
+{
+"pk": 130,
+"model": "sites.site",
+"fields": {
+"domain": "http://grandrapids.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Grand rapids"
+}
+},
+{
+"pk": 131,
+"model": "sites.site",
+"fields": {
+"domain": "http://greatfalls.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Great falls"
+}
+},
+{
+"pk": 132,
+"model": "sites.site",
+"fields": {
+"domain": "http://greenbay.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Green bay"
+}
+},
+{
+"pk": 133,
+"model": "sites.site",
+"fields": {
+"domain": "http://greensboro.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Greensboro"
+}
+},
+{
+"pk": 134,
+"model": "sites.site",
+"fields": {
+"domain": "http://greenville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Greenville / upstate"
+}
+},
+{
+"pk": 135,
+"model": "sites.site",
+"fields": {
+"domain": "http://gulfport.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Gulfport / biloxi"
+}
+},
+{
+"pk": 136,
+"model": "sites.site",
+"fields": {
+"domain": "http://norfolk.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hampton roads"
+}
+},
+{
+"pk": 137,
+"model": "sites.site",
+"fields": {
+"domain": "http://hanford.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hanford-corcoran"
+}
+},
+{
+"pk": 138,
+"model": "sites.site",
+"fields": {
+"domain": "http://harrisburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Harrisburg"
+}
+},
+{
+"pk": 139,
+"model": "sites.site",
+"fields": {
+"domain": "http://harrisonburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Harrisonburg"
+}
+},
+{
+"pk": 140,
+"model": "sites.site",
+"fields": {
+"domain": "http://hartford.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hartford"
+}
+},
+{
+"pk": 141,
+"model": "sites.site",
+"fields": {
+"domain": "http://hattiesburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hattiesburg"
+}
+},
+{
+"pk": 142,
+"model": "sites.site",
+"fields": {
+"domain": "http://honolulu.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hawaii"
+}
+},
+{
+"pk": 143,
+"model": "sites.site",
+"fields": {
+"domain": "http://cfl.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Heartland florida"
+}
+},
+{
+"pk": 144,
+"model": "sites.site",
+"fields": {
+"domain": "http://helena.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Helena"
+}
+},
+{
+"pk": 145,
+"model": "sites.site",
+"fields": {
+"domain": "http://hickory.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hickory / lenoir"
+}
+},
+{
+"pk": 146,
+"model": "sites.site",
+"fields": {
+"domain": "http://rockies.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "High rockies"
+}
+},
+{
+"pk": 147,
+"model": "sites.site",
+"fields": {
+"domain": "http://hiltonhead.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hilton head"
+}
+},
+{
+"pk": 148,
+"model": "sites.site",
+"fields": {
+"domain": "http://holland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Holland"
+}
+},
+{
+"pk": 149,
+"model": "sites.site",
+"fields": {
+"domain": "http://houma.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Houma"
+}
+},
+{
+"pk": 150,
+"model": "sites.site",
+"fields": {
+"domain": "http://houston.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Houston"
+}
+},
+{
+"pk": 151,
+"model": "sites.site",
+"fields": {
+"domain": "http://hudsonvalley.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Hudson valley"
+}
+},
+{
+"pk": 152,
+"model": "sites.site",
+"fields": {
+"domain": "http://humboldt.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Humboldt county"
+}
+},
+{
+"pk": 153,
+"model": "sites.site",
+"fields": {
+"domain": "http://huntington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Huntington-ashland"
+}
+},
+{
+"pk": 154,
+"model": "sites.site",
+"fields": {
+"domain": "http://huntsville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Huntsville / decatur"
+}
+},
+{
+"pk": 155,
+"model": "sites.site",
+"fields": {
+"domain": "http://imperial.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Imperial county"
+}
+},
+{
+"pk": 156,
+"model": "sites.site",
+"fields": {
+"domain": "http://indianapolis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Indianapolis"
+}
+},
+{
+"pk": 157,
+"model": "sites.site",
+"fields": {
+"domain": "http://inlandempire.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Inland empire"
+}
+},
+{
+"pk": 158,
+"model": "sites.site",
+"fields": {
+"domain": "http://iowacity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Iowa city"
+}
+},
+{
+"pk": 159,
+"model": "sites.site",
+"fields": {
+"domain": "http://ithaca.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ithaca"
+}
+},
+{
+"pk": 160,
+"model": "sites.site",
+"fields": {
+"domain": "http://jxn.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jackson, mi"
+}
+},
+{
+"pk": 161,
+"model": "sites.site",
+"fields": {
+"domain": "http://jackson.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jackson, ms"
+}
+},
+{
+"pk": 162,
+"model": "sites.site",
+"fields": {
+"domain": "http://jacksontn.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jackson, tn"
+}
+},
+{
+"pk": 163,
+"model": "sites.site",
+"fields": {
+"domain": "http://jacksonville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jacksonville"
+}
+},
+{
+"pk": 164,
+"model": "sites.site",
+"fields": {
+"domain": "http://onslow.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jacksonville, nc"
+}
+},
+{
+"pk": 165,
+"model": "sites.site",
+"fields": {
+"domain": "http://janesville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Janesville"
+}
+},
+{
+"pk": 166,
+"model": "sites.site",
+"fields": {
+"domain": "http://jerseyshore.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jersey shore"
+}
+},
+{
+"pk": 167,
+"model": "sites.site",
+"fields": {
+"domain": "http://jonesboro.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Jonesboro"
+}
+},
+{
+"pk": 168,
+"model": "sites.site",
+"fields": {
+"domain": "http://joplin.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Joplin"
+}
+},
+{
+"pk": 169,
+"model": "sites.site",
+"fields": {
+"domain": "http://kalamazoo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kalamazoo"
+}
+},
+{
+"pk": 170,
+"model": "sites.site",
+"fields": {
+"domain": "http://kalispell.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kalispell"
+}
+},
+{
+"pk": 171,
+"model": "sites.site",
+"fields": {
+"domain": "http://kansascity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kansas city, mo"
+}
+},
+{
+"pk": 172,
+"model": "sites.site",
+"fields": {
+"domain": "http://kenai.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kenai peninsula"
+}
+},
+{
+"pk": 173,
+"model": "sites.site",
+"fields": {
+"domain": "http://kpr.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kennewick-pasco-richland"
+}
+},
+{
+"pk": 174,
+"model": "sites.site",
+"fields": {
+"domain": "http://racine.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kenosha-racine"
+}
+},
+{
+"pk": 175,
+"model": "sites.site",
+"fields": {
+"domain": "http://killeen.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Killeen / temple / ft hood"
+}
+},
+{
+"pk": 176,
+"model": "sites.site",
+"fields": {
+"domain": "http://kirksville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kirksville"
+}
+},
+{
+"pk": 177,
+"model": "sites.site",
+"fields": {
+"domain": "http://klamath.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Klamath falls"
+}
+},
+{
+"pk": 178,
+"model": "sites.site",
+"fields": {
+"domain": "http://knoxville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Knoxville"
+}
+},
+{
+"pk": 179,
+"model": "sites.site",
+"fields": {
+"domain": "http://kokomo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Kokomo"
+}
+},
+{
+"pk": 180,
+"model": "sites.site",
+"fields": {
+"domain": "http://lacrosse.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "La crosse"
+}
+},
+{
+"pk": 181,
+"model": "sites.site",
+"fields": {
+"domain": "http://lasalle.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "La salle co"
+}
+},
+{
+"pk": 182,
+"model": "sites.site",
+"fields": {
+"domain": "http://lafayette.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lafayette"
+}
+},
+{
+"pk": 183,
+"model": "sites.site",
+"fields": {
+"domain": "http://tippecanoe.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lafayette / west lafayette"
+}
+},
+{
+"pk": 184,
+"model": "sites.site",
+"fields": {
+"domain": "http://lakecharles.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lake charles"
+}
+},
+{
+"pk": 185,
+"model": "sites.site",
+"fields": {
+"domain": "http://loz.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lake of the ozarks"
+}
+},
+{
+"pk": 186,
+"model": "sites.site",
+"fields": {
+"domain": "http://lakeland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lakeland"
+}
+},
+{
+"pk": 187,
+"model": "sites.site",
+"fields": {
+"domain": "http://lancaster.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lancaster, pa"
+}
+},
+{
+"pk": 188,
+"model": "sites.site",
+"fields": {
+"domain": "http://lansing.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lansing"
+}
+},
+{
+"pk": 189,
+"model": "sites.site",
+"fields": {
+"domain": "http://laredo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Laredo"
+}
+},
+{
+"pk": 190,
+"model": "sites.site",
+"fields": {
+"domain": "http://lascruces.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Las cruces"
+}
+},
+{
+"pk": 191,
+"model": "sites.site",
+"fields": {
+"domain": "http://lasvegas.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Las vegas"
+}
+},
+{
+"pk": 192,
+"model": "sites.site",
+"fields": {
+"domain": "http://lawrence.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lawrence"
+}
+},
+{
+"pk": 193,
+"model": "sites.site",
+"fields": {
+"domain": "http://lawton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lawton"
+}
+},
+{
+"pk": 194,
+"model": "sites.site",
+"fields": {
+"domain": "http://allentown.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lehigh valley"
+}
+},
+{
+"pk": 195,
+"model": "sites.site",
+"fields": {
+"domain": "http://lewiston.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lewiston / clarkston"
+}
+},
+{
+"pk": 196,
+"model": "sites.site",
+"fields": {
+"domain": "http://lexington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lexington, ky"
+}
+},
+{
+"pk": 197,
+"model": "sites.site",
+"fields": {
+"domain": "http://limaohio.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lima / findlay"
+}
+},
+{
+"pk": 198,
+"model": "sites.site",
+"fields": {
+"domain": "http://lincoln.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lincoln"
+}
+},
+{
+"pk": 199,
+"model": "sites.site",
+"fields": {
+"domain": "http://littlerock.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Little rock"
+}
+},
+{
+"pk": 200,
+"model": "sites.site",
+"fields": {
+"domain": "http://logan.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Logan"
+}
+},
+{
+"pk": 201,
+"model": "sites.site",
+"fields": {
+"domain": "http://longisland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Long island"
+}
+},
+{
+"pk": 202,
+"model": "sites.site",
+"fields": {
+"domain": "http://losangeles.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Los angeles"
+}
+},
+{
+"pk": 203,
+"model": "sites.site",
+"fields": {
+"domain": "http://louisville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Louisville"
+}
+},
+{
+"pk": 204,
+"model": "sites.site",
+"fields": {
+"domain": "http://lubbock.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lubbock"
+}
+},
+{
+"pk": 205,
+"model": "sites.site",
+"fields": {
+"domain": "http://lynchburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Lynchburg"
+}
+},
+{
+"pk": 206,
+"model": "sites.site",
+"fields": {
+"domain": "http://macon.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Macon / warner robins"
+}
+},
+{
+"pk": 207,
+"model": "sites.site",
+"fields": {
+"domain": "http://madison.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Madison"
+}
+},
+{
+"pk": 208,
+"model": "sites.site",
+"fields": {
+"domain": "http://maine.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Maine"
+}
+},
+{
+"pk": 209,
+"model": "sites.site",
+"fields": {
+"domain": "http://ksu.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Manhattan, ks"
+}
+},
+{
+"pk": 210,
+"model": "sites.site",
+"fields": {
+"domain": "http://mankato.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mankato"
+}
+},
+{
+"pk": 211,
+"model": "sites.site",
+"fields": {
+"domain": "http://mansfield.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mansfield"
+}
+},
+{
+"pk": 212,
+"model": "sites.site",
+"fields": {
+"domain": "http://masoncity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mason city"
+}
+},
+{
+"pk": 213,
+"model": "sites.site",
+"fields": {
+"domain": "http://mattoon.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mattoon-charleston"
+}
+},
+{
+"pk": 214,
+"model": "sites.site",
+"fields": {
+"domain": "http://mcallen.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mcallen / edinburg"
+}
+},
+{
+"pk": 215,
+"model": "sites.site",
+"fields": {
+"domain": "http://meadville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Meadville"
+}
+},
+{
+"pk": 216,
+"model": "sites.site",
+"fields": {
+"domain": "http://medford.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Medford-ashland"
+}
+},
+{
+"pk": 217,
+"model": "sites.site",
+"fields": {
+"domain": "http://memphis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Memphis, tn"
+}
+},
+{
+"pk": 218,
+"model": "sites.site",
+"fields": {
+"domain": "http://mendocino.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mendocino county"
+}
+},
+{
+"pk": 219,
+"model": "sites.site",
+"fields": {
+"domain": "http://merced.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Merced"
+}
+},
+{
+"pk": 220,
+"model": "sites.site",
+"fields": {
+"domain": "http://meridian.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Meridian"
+}
+},
+{
+"pk": 221,
+"model": "sites.site",
+"fields": {
+"domain": "http://milwaukee.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Milwaukee"
+}
+},
+{
+"pk": 222,
+"model": "sites.site",
+"fields": {
+"domain": "http://minneapolis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Minneapolis / st paul"
+}
+},
+{
+"pk": 223,
+"model": "sites.site",
+"fields": {
+"domain": "http://missoula.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Missoula"
+}
+},
+{
+"pk": 224,
+"model": "sites.site",
+"fields": {
+"domain": "http://mobile.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mobile"
+}
+},
+{
+"pk": 225,
+"model": "sites.site",
+"fields": {
+"domain": "http://modesto.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Modesto"
+}
+},
+{
+"pk": 226,
+"model": "sites.site",
+"fields": {
+"domain": "http://mohave.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Mohave county"
+}
+},
+{
+"pk": 227,
+"model": "sites.site",
+"fields": {
+"domain": "http://monroemi.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Monroe"
+}
+},
+{
+"pk": 228,
+"model": "sites.site",
+"fields": {
+"domain": "http://monroe.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Monroe, la"
+}
+},
+{
+"pk": 229,
+"model": "sites.site",
+"fields": {
+"domain": "http://montana.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Montana (old)"
+}
+},
+{
+"pk": 230,
+"model": "sites.site",
+"fields": {
+"domain": "http://monterey.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Monterey bay"
+}
+},
+{
+"pk": 231,
+"model": "sites.site",
+"fields": {
+"domain": "http://montgomery.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Montgomery"
+}
+},
+{
+"pk": 232,
+"model": "sites.site",
+"fields": {
+"domain": "http://morgantown.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Morgantown"
+}
+},
+{
+"pk": 233,
+"model": "sites.site",
+"fields": {
+"domain": "http://moseslake.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Moses lake"
+}
+},
+{
+"pk": 234,
+"model": "sites.site",
+"fields": {
+"domain": "http://muncie.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Muncie / anderson"
+}
+},
+{
+"pk": 235,
+"model": "sites.site",
+"fields": {
+"domain": "http://muskegon.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Muskegon"
+}
+},
+{
+"pk": 236,
+"model": "sites.site",
+"fields": {
+"domain": "http://myrtlebeach.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Myrtle beach"
+}
+},
+{
+"pk": 237,
+"model": "sites.site",
+"fields": {
+"domain": "http://nashville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Nashville"
+}
+},
+{
+"pk": 238,
+"model": "sites.site",
+"fields": {
+"domain": "http://nh.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "New hampshire"
+}
+},
+{
+"pk": 239,
+"model": "sites.site",
+"fields": {
+"domain": "http://newhaven.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "New haven"
+}
+},
+{
+"pk": 240,
+"model": "sites.site",
+"fields": {
+"domain": "http://neworleans.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "New orleans"
+}
+},
+{
+"pk": 241,
+"model": "sites.site",
+"fields": {
+"domain": "http://blacksburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Blacksburg"
+}
+},
+{
+"pk": 242,
+"model": "sites.site",
+"fields": {
+"domain": "http://newyork.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "New york city"
+}
+},
+{
+"pk": 243,
+"model": "sites.site",
+"fields": {
+"domain": "http://lakecity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "North central fl"
+}
+},
+{
+"pk": 244,
+"model": "sites.site",
+"fields": {
+"domain": "http://nd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "North dakota"
+}
+},
+{
+"pk": 245,
+"model": "sites.site",
+"fields": {
+"domain": "http://newjersey.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "North jersey"
+}
+},
+{
+"pk": 246,
+"model": "sites.site",
+"fields": {
+"domain": "http://northmiss.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "North mississippi"
+}
+},
+{
+"pk": 247,
+"model": "sites.site",
+"fields": {
+"domain": "http://northplatte.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "North platte"
+}
+},
+{
+"pk": 248,
+"model": "sites.site",
+"fields": {
+"domain": "http://nesd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northeast sd"
+}
+},
+{
+"pk": 249,
+"model": "sites.site",
+"fields": {
+"domain": "http://northernwi.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northern wi"
+}
+},
+{
+"pk": 250,
+"model": "sites.site",
+"fields": {
+"domain": "http://nmi.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northern michigan"
+}
+},
+{
+"pk": 251,
+"model": "sites.site",
+"fields": {
+"domain": "http://wheeling.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northern panhandle"
+}
+},
+{
+"pk": 252,
+"model": "sites.site",
+"fields": {
+"domain": "http://nwct.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northwest ct"
+}
+},
+{
+"pk": 253,
+"model": "sites.site",
+"fields": {
+"domain": "http://nwga.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northwest ga"
+}
+},
+{
+"pk": 254,
+"model": "sites.site",
+"fields": {
+"domain": "http://nwks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northwest ks"
+}
+},
+{
+"pk": 255,
+"model": "sites.site",
+"fields": {
+"domain": "http://enid.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Northwest ok"
+}
+},
+{
+"pk": 256,
+"model": "sites.site",
+"fields": {
+"domain": "http://ocala.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ocala"
+}
+},
+{
+"pk": 257,
+"model": "sites.site",
+"fields": {
+"domain": "http://odessa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Odessa / midland"
+}
+},
+{
+"pk": 258,
+"model": "sites.site",
+"fields": {
+"domain": "http://ogden.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ogden-clearfield"
+}
+},
+{
+"pk": 259,
+"model": "sites.site",
+"fields": {
+"domain": "http://okaloosa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Okaloosa / walton"
+}
+},
+{
+"pk": 260,
+"model": "sites.site",
+"fields": {
+"domain": "http://oklahomacity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Oklahoma"
+}
+},
+{
+"pk": 261,
+"model": "sites.site",
+"fields": {
+"domain": "http://olympic.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Olympic peninsula"
+}
+},
+{
+"pk": 262,
+"model": "sites.site",
+"fields": {
+"domain": "http://omaha.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Omaha / council bluffs"
+}
+},
+{
+"pk": 263,
+"model": "sites.site",
+"fields": {
+"domain": "http://oneonta.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Oneonta"
+}
+},
+{
+"pk": 264,
+"model": "sites.site",
+"fields": {
+"domain": "http://orangecounty.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Orange county"
+}
+},
+{
+"pk": 265,
+"model": "sites.site",
+"fields": {
+"domain": "http://oregoncoast.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Oregon coast"
+}
+},
+{
+"pk": 266,
+"model": "sites.site",
+"fields": {
+"domain": "http://orlando.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Orlando"
+}
+},
+{
+"pk": 267,
+"model": "sites.site",
+"fields": {
+"domain": "http://outerbanks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Outer banks"
+}
+},
+{
+"pk": 268,
+"model": "sites.site",
+"fields": {
+"domain": "http://owensboro.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Owensboro"
+}
+},
+{
+"pk": 269,
+"model": "sites.site",
+"fields": {
+"domain": "http://palmsprings.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Palm springs, ca"
+}
+},
+{
+"pk": 270,
+"model": "sites.site",
+"fields": {
+"domain": "http://panamacity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Panama city, fl"
+}
+},
+{
+"pk": 271,
+"model": "sites.site",
+"fields": {
+"domain": "http://parkersburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Parkersburg-marietta"
+}
+},
+{
+"pk": 272,
+"model": "sites.site",
+"fields": {
+"domain": "http://pensacola.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Pensacola"
+}
+},
+{
+"pk": 273,
+"model": "sites.site",
+"fields": {
+"domain": "http://peoria.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Peoria"
+}
+},
+{
+"pk": 274,
+"model": "sites.site",
+"fields": {
+"domain": "http://philadelphia.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Philadelphia"
+}
+},
+{
+"pk": 275,
+"model": "sites.site",
+"fields": {
+"domain": "http://phoenix.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Phoenix"
+}
+},
+{
+"pk": 276,
+"model": "sites.site",
+"fields": {
+"domain": "http://csd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Pierre / central sd"
+}
+},
+{
+"pk": 277,
+"model": "sites.site",
+"fields": {
+"domain": "http://pittsburgh.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Pittsburgh"
+}
+},
+{
+"pk": 278,
+"model": "sites.site",
+"fields": {
+"domain": "http://plattsburgh.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Plattsburgh-adirondacks"
+}
+},
+{
+"pk": 279,
+"model": "sites.site",
+"fields": {
+"domain": "http://poconos.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Poconos"
+}
+},
+{
+"pk": 280,
+"model": "sites.site",
+"fields": {
+"domain": "http://porthuron.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Port huron"
+}
+},
+{
+"pk": 281,
+"model": "sites.site",
+"fields": {
+"domain": "http://portland.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Portland, or"
+}
+},
+{
+"pk": 282,
+"model": "sites.site",
+"fields": {
+"domain": "http://potsdam.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Potsdam-canton-massena"
+}
+},
+{
+"pk": 283,
+"model": "sites.site",
+"fields": {
+"domain": "http://prescott.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Prescott"
+}
+},
+{
+"pk": 284,
+"model": "sites.site",
+"fields": {
+"domain": "http://provo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Provo / orem"
+}
+},
+{
+"pk": 285,
+"model": "sites.site",
+"fields": {
+"domain": "http://pueblo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Pueblo"
+}
+},
+{
+"pk": 286,
+"model": "sites.site",
+"fields": {
+"domain": "http://pullman.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Pullman / moscow"
+}
+},
+{
+"pk": 287,
+"model": "sites.site",
+"fields": {
+"domain": "http://quadcities.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Quad cities, ia/il"
+}
+},
+{
+"pk": 288,
+"model": "sites.site",
+"fields": {
+"domain": "http://raleigh.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Raleigh / durham / ch"
+}
+},
+{
+"pk": 289,
+"model": "sites.site",
+"fields": {
+"domain": "http://rapidcity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Rapid city / west sd"
+}
+},
+{
+"pk": 290,
+"model": "sites.site",
+"fields": {
+"domain": "http://reading.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Reading"
+}
+},
+{
+"pk": 291,
+"model": "sites.site",
+"fields": {
+"domain": "http://redding.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Redding"
+}
+},
+{
+"pk": 292,
+"model": "sites.site",
+"fields": {
+"domain": "http://reno.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Reno / tahoe"
+}
+},
+{
+"pk": 293,
+"model": "sites.site",
+"fields": {
+"domain": "http://providence.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Rhode island"
+}
+},
+{
+"pk": 294,
+"model": "sites.site",
+"fields": {
+"domain": "http://richmond.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Richmond"
+}
+},
+{
+"pk": 295,
+"model": "sites.site",
+"fields": {
+"domain": "http://richmondin.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Richmond, in"
+}
+},
+{
+"pk": 296,
+"model": "sites.site",
+"fields": {
+"domain": "http://roanoke.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Roanoke"
+}
+},
+{
+"pk": 297,
+"model": "sites.site",
+"fields": {
+"domain": "http://rmn.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Rochester, mn"
+}
+},
+{
+"pk": 298,
+"model": "sites.site",
+"fields": {
+"domain": "http://rochester.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Rochester, ny"
+}
+},
+{
+"pk": 299,
+"model": "sites.site",
+"fields": {
+"domain": "http://rockford.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Rockford"
+}
+},
+{
+"pk": 300,
+"model": "sites.site",
+"fields": {
+"domain": "http://roseburg.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Roseburg"
+}
+},
+{
+"pk": 301,
+"model": "sites.site",
+"fields": {
+"domain": "http://roswell.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Roswell / carlsbad"
+}
+},
+{
+"pk": 302,
+"model": "sites.site",
+"fields": {
+"domain": "http://sacramento.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sacramento"
+}
+},
+{
+"pk": 303,
+"model": "sites.site",
+"fields": {
+"domain": "http://saginaw.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Saginaw-midland-baycity"
+}
+},
+{
+"pk": 304,
+"model": "sites.site",
+"fields": {
+"domain": "http://salem.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Salem, or"
+}
+},
+{
+"pk": 305,
+"model": "sites.site",
+"fields": {
+"domain": "http://salina.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Salina"
+}
+},
+{
+"pk": 306,
+"model": "sites.site",
+"fields": {
+"domain": "http://saltlakecity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Salt lake city"
+}
+},
+{
+"pk": 307,
+"model": "sites.site",
+"fields": {
+"domain": "http://sanangelo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "San angelo"
+}
+},
+{
+"pk": 308,
+"model": "sites.site",
+"fields": {
+"domain": "http://sanantonio.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "San antonio"
+}
+},
+{
+"pk": 309,
+"model": "sites.site",
+"fields": {
+"domain": "http://sandiego.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "San diego"
+}
+},
+{
+"pk": 310,
+"model": "sites.site",
+"fields": {
+"domain": "http://slo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "San luis obispo"
+}
+},
+{
+"pk": 311,
+"model": "sites.site",
+"fields": {
+"domain": "http://sanmarcos.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "San marcos"
+}
+},
+{
+"pk": 312,
+"model": "sites.site",
+"fields": {
+"domain": "http://sandusky.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sandusky"
+}
+},
+{
+"pk": 313,
+"model": "sites.site",
+"fields": {
+"domain": "http://santabarbara.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Santa barbara"
+}
+},
+{
+"pk": 314,
+"model": "sites.site",
+"fields": {
+"domain": "http://santafe.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Santa fe / taos"
+}
+},
+{
+"pk": 315,
+"model": "sites.site",
+"fields": {
+"domain": "http://santamaria.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Santa maria"
+}
+},
+{
+"pk": 316,
+"model": "sites.site",
+"fields": {
+"domain": "http://sarasota.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sarasota-bradenton"
+}
+},
+{
+"pk": 317,
+"model": "sites.site",
+"fields": {
+"domain": "http://savannah.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Savannah / hinesville"
+}
+},
+{
+"pk": 318,
+"model": "sites.site",
+"fields": {
+"domain": "http://scottsbluff.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Scottsbluff / panhandle"
+}
+},
+{
+"pk": 319,
+"model": "sites.site",
+"fields": {
+"domain": "http://scranton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Scranton / wilkes-barre"
+}
+},
+{
+"pk": 320,
+"model": "sites.site",
+"fields": {
+"domain": "http://seattle.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Seattle-tacoma"
+}
+},
+{
+"pk": 321,
+"model": "sites.site",
+"fields": {
+"domain": "http://sheboygan.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sheboygan, wi"
+}
+},
+{
+"pk": 322,
+"model": "sites.site",
+"fields": {
+"domain": "http://showlow.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Show low"
+}
+},
+{
+"pk": 323,
+"model": "sites.site",
+"fields": {
+"domain": "http://shreveport.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Shreveport"
+}
+},
+{
+"pk": 324,
+"model": "sites.site",
+"fields": {
+"domain": "http://sierravista.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sierra vista"
+}
+},
+{
+"pk": 325,
+"model": "sites.site",
+"fields": {
+"domain": "http://siouxcity.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sioux city, ia"
+}
+},
+{
+"pk": 326,
+"model": "sites.site",
+"fields": {
+"domain": "http://siouxfalls.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Sioux falls / se sd"
+}
+},
+{
+"pk": 327,
+"model": "sites.site",
+"fields": {
+"domain": "http://siskiyou.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Siskiyou county"
+}
+},
+{
+"pk": 328,
+"model": "sites.site",
+"fields": {
+"domain": "http://skagit.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Skagit / island / sji"
+}
+},
+{
+"pk": 329,
+"model": "sites.site",
+"fields": {
+"domain": "http://southbend.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "South bend / michiana"
+}
+},
+{
+"pk": 330,
+"model": "sites.site",
+"fields": {
+"domain": "http://southcoast.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "South coast"
+}
+},
+{
+"pk": 331,
+"model": "sites.site",
+"fields": {
+"domain": "http://sd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "South dakota"
+}
+},
+{
+"pk": 332,
+"model": "sites.site",
+"fields": {
+"domain": "http://miami.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "South florida"
+}
+},
+{
+"pk": 333,
+"model": "sites.site",
+"fields": {
+"domain": "http://southjersey.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "South jersey"
+}
+},
+{
+"pk": 334,
+"model": "sites.site",
+"fields": {
+"domain": "http://ottumwa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southeast ia"
+}
+},
+{
+"pk": 335,
+"model": "sites.site",
+"fields": {
+"domain": "http://seks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southeast ks"
+}
+},
+{
+"pk": 336,
+"model": "sites.site",
+"fields": {
+"domain": "http://juneau.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southeast alaska"
+}
+},
+{
+"pk": 337,
+"model": "sites.site",
+"fields": {
+"domain": "http://semo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southeast missouri"
+}
+},
+{
+"pk": 338,
+"model": "sites.site",
+"fields": {
+"domain": "http://swv.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southern wv"
+}
+},
+{
+"pk": 339,
+"model": "sites.site",
+"fields": {
+"domain": "http://carbondale.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southern illinois"
+}
+},
+{
+"pk": 340,
+"model": "sites.site",
+"fields": {
+"domain": "http://smd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southern maryland"
+}
+},
+{
+"pk": 341,
+"model": "sites.site",
+"fields": {
+"domain": "http://swks.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest ks"
+}
+},
+{
+"pk": 342,
+"model": "sites.site",
+"fields": {
+"domain": "http://marshall.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest mn"
+}
+},
+{
+"pk": 343,
+"model": "sites.site",
+"fields": {
+"domain": "http://natchez.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest ms"
+}
+},
+{
+"pk": 344,
+"model": "sites.site",
+"fields": {
+"domain": "http://bigbend.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest tx"
+}
+},
+{
+"pk": 345,
+"model": "sites.site",
+"fields": {
+"domain": "http://swva.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest va"
+}
+},
+{
+"pk": 346,
+"model": "sites.site",
+"fields": {
+"domain": "http://swmi.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Southwest michigan"
+}
+},
+{
+"pk": 347,
+"model": "sites.site",
+"fields": {
+"domain": "http://spacecoast.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Space coast"
+}
+},
+{
+"pk": 348,
+"model": "sites.site",
+"fields": {
+"domain": "http://spokane.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Spokane / coeur d'alene"
+}
+},
+{
+"pk": 349,
+"model": "sites.site",
+"fields": {
+"domain": "http://springfieldil.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Springfield, il"
+}
+},
+{
+"pk": 350,
+"model": "sites.site",
+"fields": {
+"domain": "http://springfield.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Springfield, mo"
+}
+},
+{
+"pk": 351,
+"model": "sites.site",
+"fields": {
+"domain": "http://staugustine.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "St augustine"
+}
+},
+{
+"pk": 352,
+"model": "sites.site",
+"fields": {
+"domain": "http://stcloud.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "St cloud"
+}
+},
+{
+"pk": 353,
+"model": "sites.site",
+"fields": {
+"domain": "http://stgeorge.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "St george"
+}
+},
+{
+"pk": 354,
+"model": "sites.site",
+"fields": {
+"domain": "http://stjoseph.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "St joseph"
+}
+},
+{
+"pk": 355,
+"model": "sites.site",
+"fields": {
+"domain": "http://stlouis.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "St louis, mo"
+}
+},
+{
+"pk": 356,
+"model": "sites.site",
+"fields": {
+"domain": "http://pennstate.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "State college"
+}
+},
+{
+"pk": 357,
+"model": "sites.site",
+"fields": {
+"domain": "http://statesboro.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Statesboro"
+}
+},
+{
+"pk": 358,
+"model": "sites.site",
+"fields": {
+"domain": "http://stillwater.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Stillwater"
+}
+},
+{
+"pk": 359,
+"model": "sites.site",
+"fields": {
+"domain": "http://stockton.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Stockton"
+}
+},
+{
+"pk": 360,
+"model": "sites.site",
+"fields": {
+"domain": "http://susanville.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Susanville"
+}
+},
+{
+"pk": 361,
+"model": "sites.site",
+"fields": {
+"domain": "http://syracuse.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Syracuse"
+}
+},
+{
+"pk": 362,
+"model": "sites.site",
+"fields": {
+"domain": "http://tallahassee.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tallahassee"
+}
+},
+{
+"pk": 363,
+"model": "sites.site",
+"fields": {
+"domain": "http://tampa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tampa bay area"
+}
+},
+{
+"pk": 364,
+"model": "sites.site",
+"fields": {
+"domain": "http://terrahaute.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Terre haute"
+}
+},
+{
+"pk": 365,
+"model": "sites.site",
+"fields": {
+"domain": "http://texarkana.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Texarkana"
+}
+},
+{
+"pk": 366,
+"model": "sites.site",
+"fields": {
+"domain": "http://texoma.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Texoma"
+}
+},
+{
+"pk": 367,
+"model": "sites.site",
+"fields": {
+"domain": "http://thumb.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "The thumb"
+}
+},
+{
+"pk": 368,
+"model": "sites.site",
+"fields": {
+"domain": "http://toledo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Toledo"
+}
+},
+{
+"pk": 369,
+"model": "sites.site",
+"fields": {
+"domain": "http://topeka.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Topeka"
+}
+},
+{
+"pk": 370,
+"model": "sites.site",
+"fields": {
+"domain": "http://treasure.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Treasure coast"
+}
+},
+{
+"pk": 371,
+"model": "sites.site",
+"fields": {
+"domain": "http://tricities.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tri-cities, tn"
+}
+},
+{
+"pk": 372,
+"model": "sites.site",
+"fields": {
+"domain": "http://tucson.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tucson"
+}
+},
+{
+"pk": 373,
+"model": "sites.site",
+"fields": {
+"domain": "http://tulsa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tulsa"
+}
+},
+{
+"pk": 374,
+"model": "sites.site",
+"fields": {
+"domain": "http://tuscaloosa.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tuscaloosa"
+}
+},
+{
+"pk": 375,
+"model": "sites.site",
+"fields": {
+"domain": "http://tuscarawas.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tuscarawas co"
+}
+},
+{
+"pk": 376,
+"model": "sites.site",
+"fields": {
+"domain": "http://twinfalls.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Twin falls"
+}
+},
+{
+"pk": 377,
+"model": "sites.site",
+"fields": {
+"domain": "http://twintiers.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Twin tiers ny/pa"
+}
+},
+{
+"pk": 378,
+"model": "sites.site",
+"fields": {
+"domain": "http://easttexas.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Tyler / east tx"
+}
+},
+{
+"pk": 379,
+"model": "sites.site",
+"fields": {
+"domain": "http://up.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Upper peninsula"
+}
+},
+{
+"pk": 380,
+"model": "sites.site",
+"fields": {
+"domain": "http://utica.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Utica-rome-oneida"
+}
+},
+{
+"pk": 381,
+"model": "sites.site",
+"fields": {
+"domain": "http://valdosta.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Valdosta"
+}
+},
+{
+"pk": 382,
+"model": "sites.site",
+"fields": {
+"domain": "http://ventura.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Ventura county"
+}
+},
+{
+"pk": 383,
+"model": "sites.site",
+"fields": {
+"domain": "http://burlington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Vermont"
+}
+},
+{
+"pk": 384,
+"model": "sites.site",
+"fields": {
+"domain": "http://victoriatx.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Victoria, tx"
+}
+},
+{
+"pk": 385,
+"model": "sites.site",
+"fields": {
+"domain": "http://visalia.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Visalia-tulare"
+}
+},
+{
+"pk": 386,
+"model": "sites.site",
+"fields": {
+"domain": "http://waco.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Waco"
+}
+},
+{
+"pk": 387,
+"model": "sites.site",
+"fields": {
+"domain": "http://washingtondc.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Washington, dc"
+}
+},
+{
+"pk": 388,
+"model": "sites.site",
+"fields": {
+"domain": "http://waterloo.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Waterloo / cedar falls"
+}
+},
+{
+"pk": 389,
+"model": "sites.site",
+"fields": {
+"domain": "http://watertown.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Watertown"
+}
+},
+{
+"pk": 390,
+"model": "sites.site",
+"fields": {
+"domain": "http://wausau.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Wausau"
+}
+},
+{
+"pk": 391,
+"model": "sites.site",
+"fields": {
+"domain": "http://wenatchee.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Wenatchee"
+}
+},
+{
+"pk": 392,
+"model": "sites.site",
+"fields": {
+"domain": "http://wv.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "West virginia (old)"
+}
+},
+{
+"pk": 393,
+"model": "sites.site",
+"fields": {
+"domain": "http://quincy.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Western il"
+}
+},
+{
+"pk": 394,
+"model": "sites.site",
+"fields": {
+"domain": "http://westky.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Western ky"
+}
+},
+{
+"pk": 395,
+"model": "sites.site",
+"fields": {
+"domain": "http://westmd.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Western maryland"
+}
+},
+{
+"pk": 396,
+"model": "sites.site",
+"fields": {
+"domain": "http://westernmass.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Western massachusetts"
+}
+},
+{
+"pk": 397,
+"model": "sites.site",
+"fields": {
+"domain": "http://westslope.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Western slope"
+}
+},
+{
+"pk": 398,
+"model": "sites.site",
+"fields": {
+"domain": "http://wichita.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Wichita"
+}
+},
+{
+"pk": 399,
+"model": "sites.site",
+"fields": {
+"domain": "http://wichitafalls.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Wichita falls"
+}
+},
+{
+"pk": 400,
+"model": "sites.site",
+"fields": {
+"domain": "http://williamsport.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Williamsport"
+}
+},
+{
+"pk": 401,
+"model": "sites.site",
+"fields": {
+"domain": "http://wilmington.craigslist.org/search/cpg?query=&catAbbreviation=cpg&addThree=forpay&format=rss", 
+"name": "Wilmington, nc"
+}
+}
+]

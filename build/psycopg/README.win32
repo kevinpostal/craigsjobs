@@ -1,0 +1,61 @@
+Requirements to build on Windows:
+  Microsoft Visual C++  (Compiled with 6.0)
+  Python installed      (Tested with 2.2.1)
+  The PostgreSQL Source (Tested with 7.2.1)
+  The MX Toolkit Source (Tested with 2.0.3)
+  The psycopg source (which you should have if you are reading this)
+
+To build:
+  Download the source to PostgreSQL and MX toolkit.
+      http://www.postgresql.org/
+      http://www.lemburg.com/python/mxExtensions.html
+  Build the PostgreSQL libpq library.  This can be done by typing
+    'nmake -f win32.mak' in the src directory.  NOTE: this will build
+    several interfaces and executables for the WIN32 platform, not just
+    the libpq.
+  Build and install the MX Toolkit:
+    'python setup.py build'
+    'python setup.py install'
+  Go to the psycopg directory and edit the Makefile.msvc file.
+    Specifically, the following defines might need changing.  Change
+    to the directory where your code is located:
+      PYTHON   - The location of your distribution
+      POSTGRESQL - The location of the source
+      MX - The location of the source
+    The following defines might also need changing, depending on what version
+    of Python the code is being compiled for (Assumes 2.2):
+      MX_LIB
+      PYTHON_LIB
+  Build the psycopg.pyd.  Type:
+    nmake -f Makefile.msvc .\psycopg.pyd
+  To install the newly created psycopg.pyd to your $PYTHON\DLLs directory,
+    type:
+      nmake -f Makefile.msvc install
+  Copy the libpq.dll from the PostgreSQL directory to $PYTHON\DLLs directory
+    if compiled with the dynamic library.
+  Run the test, changing the values on the second line appropriately to an
+    already existing database.  Note that the 'diff' command is not a standard
+    WIN32 command and must be downloaded separately:
+      cd tests
+      python check_types.py "hosts=hostname dbname=dbname user=user" > t
+      diff t check_types.expected
+  If there is nothing different between the two files, then it passed the test.
+
+
+Notes:
+I have not tested it with Zope.  It would be interesting to know if it
+   works with the Win32 version of Zope or not.
+
+nmake commandline variables:
+  LIBPQSTATIC=1     Compiles in the library instead of using the libpq.dll.
+                    Currently does not work with the standard distrubition of
+                    PostgreSQL when compiled with this option.
+
+
+Known issues:
+* Compiling with the static LIBPQ library (nmake LIBPQSTATIC=1 option),
+  connections are not able to be made.  This was traced down and found to
+  be an issue with with PostgreSQL library.  There are initialization
+  functions in the DLL initialization function of LIBPQ that do not get
+  called with the static library, which is why connections are made.
+

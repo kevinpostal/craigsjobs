@@ -1,0 +1,412 @@
+psycopg news for 1.1.20
+-----------------------
+
+* Fixed problem with wrongly applied infinity patch in 1.1.20.
+
+* Fixed build problem in win32 when using Makefile.msvc.
+
+psycopg news for 1.1.20
+-----------------------
+
+* Fixed the date/time/timestamp formatting problem introduced by 1.1.19.
+
+* Fixed build problem in win32 when using Makefile.msvc.
+
+psycopg news for 1.1.19
+-----------------------
+
+* Now ZPsycopgDA does not loose the connection and raise an error is
+  PostgreSQL is restarted but tries to rconnect and execute the issue
+  query again (patch from Jonathan Stoneman.)
+
+* Fixed precision and scale in cursor.description for numeric types.
+
+* The XXXFromMx() functions don't truncate fractional seconds anymore (but
+  note that mx.DateTime uses floating point seconds so rounding errors may
+  creep in anyway.)
+
+* Fixed two segfaults: when multithreading; patch from James Henstridge and
+  when calling dictfetchone() without results.
+
+psycopg news for 1.1.18
+-----------------------
+
+* Fixed mktime() overflow in ZPsycopgDA.
+
+psycopg news for 1.1.17
+-----------------------
+
+* ZPsycopgDA can now return unicode strings on request.
+
+* Fixed problem with timestamps in ZPsycopgDA.
+
+psycopg news for 1.1.16
+-----------------------
+
+* fixed .rowcount problem introduced in 1.1.15.
+
+* fixed a problem with %% not being transformed into % when calling 
+  .execute() with a zero-length tuple or dict.
+
+* now using COPY FROM/COPY TO in .execute() raise an exception instead
+  of segfaulting.
+
+* faster Date and DateTime type casting.
+
+* small and trivial optimizations and fixes.
+
+psycopg news for 1.1.15
+-----------------------
+
+* Interval typecasting eventually-eventually works the Right Way (TM).
+
+* Fixed two bad memory leaks in QuotedString and Binary objects.
+
+* Reverted change on rowcount attribute, now it is always set to the real
+  number of affected columns.
+
+psycopg news for 1.1.14
+-----------------------
+
+* Interval typecasting eventually works the Right Way (TM).
+
+* ZPsycopgDA now support unicode strings and different backend encodings.
+
+* ZPsycopgDA accept query data as an extra parameter to execute() (but
+  still no way to give it extra data from inside a ZSQL Method.)
+
+* Better DBAPI-2.0 compliance (rowcount attribute and argument passing.)
+
+* Now builds on Fedora Core 2 (but remember that the real psycopg
+  aficionado runs on Debian ;-P )
+
+* COPY FROM raise an exception and return usefull information on error.
+
+psycopg news for 1.1.13
+-----------------------
+
+* ZPsycopgDA works again.
+
+psycopg news for 1.1.12
+-----------------------
+
+* Fixed nasty segfault/deadlock in switch_isolation_level.
+
+* Now the PostgreSQL TIME type is correctly converted to a DateTimeDelta
+  instead of a DateTime. This is much better because you can now add two
+  times and a time and a date.
+
+* Added an "sslmode" parameter (look at PostgreSQL documentation for
+  possible values.)
+
+* .execute() now rise the right exception if called with a wrong
+   tuple/dict. Also, %% in queries does not raise an exception anymore.
+
+* Updated RPM specs (thanks to Mark McClain we now have updated RPMs on
+  initd.org too.)
+
+psycopg news for 1.1.11
+-----------------------
+
+* a modern autoconf is now needed to build psycopg.
+
+* now an error during commit or rollback is correctly reported by raising 
+  an exception.
+
+* when the libpq protocol 3.0 is available, psycopg uses a smater method
+  to determine exception type (unfortunately the old string compare method
+  is still neede for postgresql <= 7.3.x.)
+
+* plugged a memory leak in copy_from().
+
+* where did the news for 1.1.10 go?
+
+psycopg news for 1.1.9
+----------------------
+
+* psycopg distribution now includes the GeoTypes package by Richard Taylor
+  (QinetiQ Plc)!
+
+* Problems with sequences and mappings non correctly used in .execute()
+  should be gone (mogrification code completely rewritten.) Many thanks
+  to Richard Taylor and Vsevolod Lobko that helped by testing the "pre"
+  releases.
+
+* no more libpq 7.1.x linking problems related to PQfreeNotify.
+
+psycopg news for 1.1.7
+----------------------
+
+* added notifies and fileno methods to cursor objects.
+
+* now execute accept any object that defined __getitem__ and not only
+  dictionaries.
+
+* little fix in ZPsycopgDA, should work with Zope 2.7.
+
+psycopg news for 1.1.6
+----------------------
+
+* cursor objects now have the .scroll() method.
+
+* NUL characters in strings are discarded in quoting; use a Binary object if
+  you need strings with embedded NULs.
+
+* Fixed another MT problem in .execute().
+
+psycopg news for 1.1.5
+----------------------
+
+* ZPsycopgDA now rollback before raising an exception; should be a backward
+  compatible change for people that really want to continue executing queries
+  after an exception.
+
+* fixed problem with dictionary mogrification (i.e., specifying the same key
+  multiple times and having the None value in the dict should work now.)
+
+* fixed keeper status trashing problem: no more psycopg stuck in transaction
+  (maybe this will also solve ZPsycopgDA problems: will see...)
+
+* now copy_from and copy_to can be passed instances of classes with "readline"
+  and "write" methods and not only file instances.
+ 
+psycopg news for 1.1.4
+----------------------
+
+* Fixed various memory leak problems.
+
+* Implemented "statusmessage" attribute on cursors.
+
+psycopg news for 1.1.3
+----------------------
+
+* Fixed problem with psycopg always reporting IntegrityError.
+
+* Fixed segfault in debug statements.
+
+* Now Python GIL is unlocked during PQconnectdb() calls (better
+  multithreading.)
+
+psycopg news for 1.1.2
+----------------------
+
+* Skipped version 1.1.1 (never released 'cause of a cvs tag error)
+
+* Much better cursor.description fields (many thanks to William K. Volkman)
+
+* psycopg.connect() now takes keyword parameters for host, dbname, port,
+  user and password (they are all strings, even "port".)
+
+* connection.set_isolation_level() implemented to help switching from default
+  isolation to other levels supported by PostgreSQL. [autocommit now simply 
+  does a set_isolation_level(0)]
+
+* Implemented .lastrowid attribute for cursors.
+
+* Now psycopg should build on win32/cygwin, thank to Hajime Nakagami patches.
+
+* Includes every fix from 1.0.x up to 1.0.15.1:
+
+  - Fixed connection-stay-open-when-i-do-conn.close() bug.
+  - Better DBAPI-2.0 compliance for setinputsizes and setoutputsize methods.
+  - Better support for build on MacOS X.
+  - Fixed problem with formats in string mogrification.
+  - Fixed other miscellaneous buglets in Zope Adapter.
+  - Fixed small memory leak in .fetchXXX() methods.
+  - Fixed serialization problem in ZPsycopgDA reported by Dieter Maurer.
+
+psycopg news for 1.1
+--------------------
+
+* COPY TO/COPY FROM implemented by Tom Jenkins
+
+* Merged changes from 1.0.13.
+
+psycopg news for 1.0.12
+-----------------------
+
+* Maintenance release fixing some little buglets:
+  - Fixed memory leak in .execute().
+  - Better configure under MacOS X.
+  - DA-browser now works even with tables with mixed-case names.
+  - timestamps time is now set to correct value instead of 0. 
+
+psycopg news for 1.0.11.1
+-------------------------
+
+* Fixed orrible bug in ZPsycopgDA not acception psycopg 1.0.11 as a valid
+  version.
+
+psycopg news for 1.0.11
+-----------------------
+
+* last problems from "None passed to typecasters" (introduced in 1.0.9) in
+  ZPsycopgDA solved (hopefully.)
+
+* psycopg now reports meaningfull exception types for some errors (like
+  IntegrityError for duplicate insertions in unique indices, etc.)
+
+psycopg news for 1.0.10
+-----------------------
+
+* fixed an exception problem introduced in 1.0.9 (patch by Matt 
+  Hoskins.)
+
+* ZPsycopgDA now checks psycopg version and raise an exception if it
+  does not match.
+
+psycopg news for 1.0.9
+----------------------
+
+* fixed problem with connection left in invalid state by applying
+  Tom Jenkins patch.
+
+* None values passed to the typecasters, it is now possible to
+  translate None into "" to achieve pygrsql compatibilty. 
+
+* applied 'seconds as a float' patch from Jelle.
+
+psycopg news for 1.0.8
+----------------------
+
+* fixed a segfault introduced in 1.0.7 and another little bug when
+  dealing with empty strings in QuotedString objects.
+
+* Added win32 compatibility (many many thanks to Jason Erickson).
+
+psycopg news for 1.0.7
+----------------------
+
+* Fixed little bugs in type management (infinity problems and the
+  TIMESTAMPTZ type) and Zope import. Better configure script.
+
+* Now psycopg really close the physical connection to PostgreSQL on
+  connection .close().
+
+psycopg news for 1.0.5
+----------------------
+
+* Applied a little patch to make table browser in zope show system tables
+  correctly. 
+
+* Infinity values are now converted the correct way.
+
+psycopg news for 1.0.4
+----------------------
+
+* ZPsycopgDA does not duplicate itself anymore.
+
+* Table browsing works again.
+
+psycopg news for 1.0.3
+----------------------
+
+* bugfix for b0rken ZPsycopgDA in 1.0.2.
+
+psycopg news for 1.0.2
+----------------------
+
+* Fixed problem with incorrect interpretation of hundredths of a second.
+
+psycopg news for 1.0.1
+----------------------
+
+* fixed two little memory leaks, see ChangeLog for details.
+
+* fixed problem with garbled passwords when using crypt autentication.
+
+psycopg news for 1.0
+--------------------
+
+* added regression tests, first result is much better conversion of date and
+  time types.
+  
+* fixed last know segfault (psycopg runs stable for a lot of people now.)
+
+* psycopg compile and run on FreeBSD and MacOS X.
+
+* much better binary objects, they use less memory and quoting is faster,
+  thank to the new, smarter memory allocator.
+  
+* fixed all reported buglets (mostly dbapi and type-system related.)
+
+* hey, this is one-dot-oh!
+
+* the following features are missing from psycopg 1.0 and will be added when
+  we have a little more time (i.e., there will be no _feature_ releases after
+  1.0, only bugfixes):
+
+    - documentation is incomplete (we are slowly writing it, track CVS if you
+      want up-to-date docs)
+
+    - dbapi-2.0 testsuite is incomplete (need to move code to the unittest
+      framework)
+
+    - psycopg needs a full suite of regression tests to be sure we don't break
+      things while implementing new features (i think we'll add them _while_
+      writing new features :)
+
+psycopg news for 0.99.7
+-----------------------
+
+* time intervals are correctly recognized and converted into DateTimeInterval 
+  objects. 
+
+* almost complete (bugs apart) DBAPI-2.0 support. switched psycopg to use
+  QuotedString for every string passed as a bound argument. Binary now works 
+  (but still consumes lots of memory).
+
+* added doc/ to hold documentation.
+
+* added lastoid() method to cursor objects, to retrieve the OID of the last 
+  inserted row. 
+
+psycopg news for 0.99.4
+-----------------------
+
+* psycopg is approaching 1.0, so only DBAPI compliance patches and bug fixes
+  are getting in.
+
+* added Binary and QuotedString objects. note that sometime before 1.0 we'll
+  switch turn every string passed to psycopg into a QuotedString, possibily
+  breaking Zope compatibility and old scripts doing their own quoting.
+
+psycopg news for 0.5.x
+----------------------
+
+* this is the development branch, if you want stability, stick with 0.4.6.
+
+* added pthread locks so that different threads (cursors) can use the same
+  postgres connection (this was done *only* to respect the dbapi on cursor
+  isolation.)
+
+* now the default for the .cursor() method is to associate every cursor to
+  the same physical connection, to avoid isolation (as the DBAPI-2.0 specify),
+  you can change that by calling the .serialize() method on the connection and
+  giving it 0 as the argument, e.g., "o.serialize(0)".
+
+psycopg news for 0.4.1
+----------------------
+
+* autocommit mode is now supported on cursors and connections.
+
+psycopg news for 0.4
+--------------------
+
+* implemented all the remaining DBAPI-2.0 type singletons (DATETIME and
+  BINARY included)
+
+psycopg news for 0.3
+--------------------
+
+* threading problems resolved
+
+* added type casting from postgres to python (the user can now specify
+  its own casting objects, the default singletons NUMBER and STRING are
+  included [and act as default cast objects] plus INTEGER and FLOAT as
+  an extension to the DBAPI-2.0.) 
+  investigate the code in examples/usercast_test.py to understand how to
+  add your own types...
+
+* beginning of the Zope Database Adapter: give it a try even it it is 
+  broken!

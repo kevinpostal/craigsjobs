@@ -1,0 +1,90 @@
+<html>
+  <head><title>Add Z Psycopg Database Connection</title></head>
+  <body bgcolor="#FFFFFF" link="#000099" vlink="#555555" alink="#77003B">
+  
+    <h2>Add Z Psycopg Database Connection</h2>
+    
+    <form action="manage_addZPsycopgConnection" method="POST">
+      <table cellspacing="2">
+	<tr>
+	  <th align="LEFT" valign="TOP">Id</th>
+	  <td align="LEFT" valign="TOP">
+            <input type="TEXT" name="id" size="40"
+                value="Psycopg_database_connection">
+          </td>
+	</tr>
+	<tr>
+	  <th align="LEFT" valign="TOP"><em>Title</em></th>
+	  <td align="LEFT" valign="TOP">
+            <input type="TEXT" name="title" size="40"
+                value="Z Psycopg Database Connection">
+          </td>
+	</tr>
+	<tr>
+	  <th align="LEFT" valign="TOP">
+             Enter a Database Connection String
+	     <a href="#1"><sup>1</sup></a></th>
+	  <td align="LEFT" valign="TOP">
+            <input type="TEXT" name="connection_string" size="40">
+          </td>
+	</tr>
+	<tr>
+	  <th align="LEFT" valign="TOP">Connect immediately</th>
+	  <td align="LEFT" valign="TOP">
+            <input name="check" type="CHECKBOX" value="YES" CHECKED>
+          </td>
+	</tr>
+	<tr>
+	  <th align="LEFT" valign="TOP">Use Zope's internal DateTime <br>
+	    module (instead of mxDateTime).</th>
+	  <td align="LEFT" valign="TOP">
+            <input name="zdatetime" type="CHECKBOX" value="YES" CHECKED>
+          </td>
+	</tr>
+	<tr>
+	  <th align="LEFT" valign="TOP">PyGreSQL emulation mode</th>
+	  <td align="LEFT" valign="TOP">
+            <input name="pygresql" type="CHECKBOX" value="YES">
+          </td>
+	</tr>
+        <tr>
+	  <th align="LEFT" valign="TOP">Transaction isolation level</th>
+	  <td align="LEFT" valign="TOP">
+	    <select name="tilevel:int">
+	    <option value="1">Read committed</option>
+	    <option value="2" selected>Serializable</option>
+	    </select>
+	  </td>
+        </tr>
+	<tr>
+	  <td></td>
+	  <td><br><input type="SUBMIT" value="Add"></td>
+	</tr>
+      </table>
+    </form>
+
+
+
+<dt><a hname="1"><sup>1</sup></a> Connection Strings</dt>
+<dd>
+
+<p>The connection string used for Z Psycopg Database Connection are
+exactly the same connection strings required by posgresql tools.  The
+connection strings are typically of the form:
+
+<quote><tt>
+  dbname=database_name user=user_name password=secret_string 
+  host=server_addr port=port_number
+</tt></quote>
+    
+or:
+
+<quote><tt>
+  dbname=database_name user=user_name password=secret_string port=port_number
+</tt></quote>
+
+to use the unix socket named <tt>port_number</tt>.  See PotsgreSQL
+documentation for more options.  </dd></dl>
+
+</body>
+</html>

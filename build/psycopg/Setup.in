@@ -1,0 +1,5 @@
+OPT= -O2 -fomit-frame-pointer -pipe
+LDFLAGS= -s
+LDSHARED= @LINKCC@ -s -shared -lc
+*shared*
+psycopg module.c connection.c cursor.c typeobj.c typemod.c @LIBOBJS@ @PGSQLLIBS@

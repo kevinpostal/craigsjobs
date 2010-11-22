@@ -1,0 +1,9 @@
+/* replacement for asprintf() */
+#ifndef HAVE_ASPRINTF
+extern int asprintf(char **buffer, char *fmt, ...);
+#endif
+
+/* replacement for PQfreeNotify */
+#ifndef HAVE_PQFREENOTIFY
+#define PQfreeNotify free
+#endif

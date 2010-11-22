@@ -1,0 +1,135 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# This is the debhelper compatability version to use.
+export DH_COMPAT=3
+export version="`cat VERSION`"
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	rm -f configure
+	./autogen.sh --dont-run-configure
+	touch configure-stamp
+
+build: configure build-stamp
+build-stamp: 
+	dh_testdir
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.1/mx \
+          --with-python=/usr/bin/python2.1 --with-python-version=2.1     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	$(MAKE) clean && $(MAKE) && mv psycopgmodule.so psycopgmodule.so.2.1
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.2/mx \
+          --with-python=/usr/bin/python2.2 --with-python-version=2.2     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	$(MAKE) clean && $(MAKE) && mv psycopgmodule.so psycopgmodule.so.2.2
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.3/mx \
+          --with-python=/usr/bin/python2.3 --with-python-version=2.3     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	$(MAKE) clean && $(MAKE) && mv psycopgmodule.so psycopgmodule.so.2.3
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.4/mx \
+          --with-python=/usr/bin/python2.4 --with-python-version=2.4     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	$(MAKE) clean && $(MAKE) && mv psycopgmodule.so psycopgmodule.so.2.4
+	touch build-stamp
+
+clean: configure
+	dh_testdir
+	dh_testroot 
+	-$(MAKE) distclean
+	rm -f *-stamp Setup Makefile Makefile.pre
+	rm -f psycopgmodule.so* typeobj_builtins.c
+	find . -name "*~" | xargs rm -fr
+	dh_clean
+	rm -f configure
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.1/mx \
+          --with-python=/usr/bin/python2.1 --with-python-version=2.1     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	cp psycopgmodule.so.2.1 psycopgmodule.so
+	$(MAKE) install exec_prefix=`pwd`/debian/python2.1-psycopg/usr \
+		prefix=`pwd`/debian/python2.1-psycopg/usr
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.2/mx \
+          --with-python=/usr/bin/python2.2 --with-python-version=2.2     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	cp psycopgmodule.so.2.2 psycopgmodule.so
+	$(MAKE) install exec_prefix=`pwd`/debian/python2.2-psycopg/usr \
+		prefix=`pwd`/debian/python2.2-psycopg/usr
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.3/mx \
+          --with-python=/usr/bin/python2.3 --with-python-version=2.3     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	cp psycopgmodule.so.2.3 psycopgmodule.so
+	$(MAKE) install exec_prefix=`pwd`/debian/python2.3-psycopg/usr \
+		prefix=`pwd`/debian/python2.3-psycopg/usr
+	rm -f config.cache
+	./configure --with-mxdatetime-includes=/usr/include/python2.4/mx \
+          --with-python=/usr/bin/python2.4 --with-python-version=2.4     \
+	  --with-postgres-includes=/usr/include/postgresql/8.0
+	cp psycopgmodule.so.2.4 psycopgmodule.so
+	$(MAKE) install exec_prefix=`pwd`/debian/python2.4-psycopg/usr \
+		prefix=`pwd`/debian/python2.4-psycopg/usr
+	$(MAKE) dist-zope && \
+	  tar xzf ZPsycopgDA-$(version).tar.gz \
+	    -C debian/zope-psycopgda-common/usr/share/zope/lib/python/Products
+	find debian -name psycopgmodule.so | xargs chmod 644
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs -i AUTHORS debian/README.zpsycopgda
+	dh_installchangelogs -i
+	dh_link -i
+	dh_compress -i
+	dh_fixperms -i
+	dh_installdeb -i
+	dh_gencontrol -i -- -Vversion=$(version)
+	dh_md5sums -i
+	dh_builddeb -i
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs -ppython-psycopg
+	dh_installdocs -ppython2.1-psycopg \
+	  README AUTHORS NEWS TODO CREDITS \
+	  SUCCESS RELEASE-1.0 doc tests
+	dh_installdocs -ppython2.2-psycopg \
+	  README AUTHORS NEWS TODO CREDITS \
+	  SUCCESS RELEASE-1.0 doc tests
+	dh_installdocs -ppython2.3-psycopg \
+	  README AUTHORS NEWS TODO CREDITS \
+	  SUCCESS RELEASE-1.0 doc tests
+	dh_installdocs -ppython2.4-psycopg \
+	  README AUTHORS NEWS TODO CREDITS \
+	  SUCCESS RELEASE-1.0 doc tests
+	dh_installchangelogs -ppython-psycopg
+	dh_installchangelogs -ppython2.1-psycopg \
+	  -ppython2.2-psycopg -ppython2.3-psycopg -ppython2.4-psycopg ChangeLog
+	dh_link -a
+	dh_strip -a
+	dh_compress -a
+	dh_fixperms -a
+	dh_makeshlibs -a
+	dh_installdeb -a
+	dh_shlibdeps -a
+	dh_gencontrol -a
+	dh_md5sums -a
+	dh_builddeb -a
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

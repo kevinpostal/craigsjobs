@@ -1,0 +1,6 @@
+*.pyc
+*.swap
+pip-log.txt
+wsgi_handler.py
+settings_local.py
+/static/strain_images/*

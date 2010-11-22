@@ -1,0 +1,34 @@
+2002-04-22  Jason Erickson  <jerickso@stickpeople.com>
+
+	* Makefile.msvc: Updated to be able to extract the correct VERSION
+	information.  This allows the correct string to be compiled in
+	without the need to make changes to the windows config32.h file.
+
+	* Makefile.msvc: Made minor changes to support integration of the
+	WIN32 patches into the master source tree at:
+	http://initd.org/software/psycopg
+
+	* config.h: Renamed to config32.h
+
+	* config32.h: Removed version information from the config32.h file.
+
+	* HISTORY: Renamed to ChangeLog.win32
+
+	* ChangeLog.win32: Reformated information
+
+2002-04-10  Jason Erickson  <jerickso@stickpeople.com>
+
+	* Makefile.msvc: Updated to use Python 2.2.  Python 2.1 was being used
+	before today.
+
+2002-04-07  Jason Erickson  <jerickso@stickpeople.com>
+
+	* Rechecked with the latest release (1.0.7) and rebuilt patch file.
+
+	* Included PostgreSQL copyright with the binary package since the
+	PostgreSQL library is distributed
+
+2002-02-20  Jason Erickson  <jerickso@stickpeople.com>
+
+	* First Package Release
+

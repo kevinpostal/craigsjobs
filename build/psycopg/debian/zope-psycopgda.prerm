@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+PRODUCTS_DIR=/usr/lib/zope/lib/python/Products
+
+case "$1" in
+  remove|upgrade|deconfigure)
+    rm -rf $PRODUCTS_DIR/ZPsycopgDA
+    rmdir --ignore-fail-on-non-empty $PRODUCTS_DIR
+
+esac

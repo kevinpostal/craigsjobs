@@ -1,0 +1,99 @@
+Source: psycopg
+Section: python
+Priority: optional
+Build-depends: autoconf, postgresql-dev, debhelper (>> 3), python2.1-dev, python2.2-dev, python2.3-dev, python-egenix-mx-base-dev, python2.1, python2.2, python2.3, python, symlinks, 
+Maintainer: Federico Di Gregorio <fog@debian.org>
+Uploaders: martin f. krafft <madduck@debian.org>
+Standards-Version: 3.6.1
+
+Package: python-psycopg
+Architecture: any
+Section: python
+Depends: python (>= 2.3), python (<< 2.4), python2.3-psycopg
+Description: Python module for PostgreSQL [dummy package]
+ psycopg is a PostgreSQL database adapter for the Python programming language
+ (just like pygresql and popy.) It was written from scratch with the aim of
+ being very small and fast, and stable as a rock. The main advantages of
+ psycopg are that it supports the full Python DBAPI-2.0 and being thread safe 
+ at level 2. psycopg is different from the other database adapter because it 
+ was designed for heavily multi-threaded applications. It also includes some
+ extensions to the standard DBAPI-2.0 to allow for better thread performance.
+ .
+ This dummy package just depends on the right, default version of Python 
+ and psycopg.
+
+Package: python2.1-psycopg
+Architecture: any
+Section: python
+Depends: ${shlibs:Depends}, python2.1-egenix-mxdatetime, python2.1
+Description: Python 2.1 module for PostgreSQL
+ psycopg is a PostgreSQL database adapter for the Python programming language
+ (just like pygresql and popy.) It was written from scratch with the aim of
+ being very small and fast, and stable as a rock. The main advantages of
+ psycopg are that it supports the full Python DBAPI-2.0 and being thread safe 
+ at level 2. psycopg is different from the other database adapter because it 
+ was designed for heavily multi-threaded applications. It also includes some
+ extensions to the standard DBAPI-2.0 to allow for better thread performance.
+
+Package: python2.2-psycopg
+Architecture: any
+Section: python
+Depends: ${shlibs:Depends}, python2.2-egenix-mxdatetime, python2.2
+Description: Python 2.2 module for PostgreSQL
+ psycopg is a PostgreSQL database adapter for the Python programming language
+ (just like pygresql and popy.) It was written from scratch with the aim of
+ being very small and fast, and stable as a rock. The main advantages of
+ psycopg are that it supports the full Python DBAPI-2.0 and being thread safe 
+ at level 2. psycopg is different from the other database adapter because it 
+ was designed for heavily multi-threaded applications. It also includes some
+ extensions to the standard DBAPI-2.0 to allow for better thread performance.
+
+Package: python2.3-psycopg
+Architecture: any
+Section: python
+Depends: ${shlibs:Depends}, python2.3-egenix-mxdatetime, python2.3
+Description: Python 2.3 module for PostgreSQL
+ psycopg is a PostgreSQL database adapter for the Python programming language
+ (just like pygresql and popy.) It was written from scratch with the aim of
+ being very small and fast, and stable as a rock. The main advantages of
+ psycopg are that it supports the full Python DBAPI-2.0 and being thread safe 
+ at level 2. psycopg is different from the other database adapter because it 
+ was designed for heavily multi-threaded applications. It also includes some
+ extensions to the standard DBAPI-2.0 to allow for better thread performance.
+
+Package: python2.4-psycopg
+Architecture: any
+Section: python
+Depends: ${shlibs:Depends}, python2.4-egenix-mxdatetime, python2.4
+Description: Python 2.4 module for PostgreSQL
+ psycopg is a PostgreSQL database adapter for the Python programming language
+ (just like pygresql and popy.) It was written from scratch with the aim of
+ being very small and fast, and stable as a rock. The main advantages of
+ psycopg are that it supports the full Python DBAPI-2.0 and being thread safe 
+ at level 2. psycopg is different from the other database adapter because it 
+ was designed for heavily multi-threaded applications. It also includes some
+ extensions to the standard DBAPI-2.0 to allow for better thread performance.
+
+Package: zope-psycopgda-common
+Architecture: all
+Section: python
+Recommends: zope2.7-psycopgda | zope-psycopgda
+Description: Zope Database Adapter based on python-psycopg (common files)
+ The package contains the common files for the PostgreSQL Zope database
+ adapter, based on the psycopg Python module.
+
+Package: zope-psycopgda
+Architecture: all
+Section: python
+Depends: zope-psycopgda-common, python2.2-psycopg, zope
+Description: Zope 2.6 database adapter based on python-psycopg
+ The package contains the PostgreSQL database adapter for Zope 2.6, based on
+ the psycopg Python module.
+
+Package: zope2.7-psycopgda
+Architecture: all
+Section: python
+Depends: zope-psycopgda-common, python2.3-psycopg, zope2.7
+Description: Zope 2.7 database adapter based on python-psycopg
+ The package contains the PostgreSQL database adapter for Zope 2.7, based on
+ the psycopg Python module.

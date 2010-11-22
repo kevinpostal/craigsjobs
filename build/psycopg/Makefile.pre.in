@@ -1,0 +1,264 @@
+# Universal Unix Makefile for Python extensions (for use with Autoconf)
+# =====================================================================
+
+# Note that this is not the same file as that distributed with Python 1.4.
+# It has been slightly modified so that it can be used with scripts created
+# by autoconf (using some extra commands written by James Henstridge)
+
+# Also note that this file will also work with Python 1.5 or 1.5.1
+
+# Short Instructions
+# ------------------
+
+# 1. Build and install Python (1.4 or newer).
+# 2. run "./configure"
+# 3. run "make"
+# You should now have a shared library.
+
+# Long Instructions
+# -----------------
+
+# Build *and install* the basic Python 1.4 distribution.  See the
+# Python README for instructions.
+
+# Create a file Setup.in for your extension.  This file follows the
+# format of the Modules/Setup.in file; see the instructions there.
+# The first line should just have the string
+#   *shared*
+# For a simple module called "spam" on file "spammodule.c", it only needs
+# to contain one extra line::
+#   spam spammodule.c
+# You can build as many modules as you want in the same directory --
+# just have a separate line for each of them in the Setup.in file.
+#
+# Note that when configure is run, The file Setup.in is parsed for @VARNAME@
+# expressions, and after they are expanded, the output is put in the file
+# Setup.  Every time configure is run, Setup is overwritten each time
+# configure is run.
+
+# Copy this file (Misc/Makefile.pre.in) to the directory containing
+# your extension.  Also create a configure script.  You may wish to use the 
+# generic one supplied with this file.  (This should be done by the one
+# writing the extension -- not the user).
+
+# Run "./configure".  This creates Makefile
+# (producing Makefile.pre as intermediate files) and
+# config.c, incorporating the values for sys.prefix, sys.exec_prefix
+# and sys.version from the installed Python binary.  For this to work,
+# the python binary must be on your path.  If this fails, try
+#   ./configure --with-python=<path>/python
+# or
+#   ./configure --with-python-version=<version> --with-python-prefix=<prefix> \
+#               --with-python-exec-prefix=<exec_prefix>
+# where <prefix> is the prefix used to install Python
+
+# If you are building your extension as a shared library (your
+# Setup.in file starts with *shared*), run "make" or "make sharedmods"
+# to build the shared library files.  If you are building a statically
+# linked Python binary (the only solution of your platform doesn't
+# support shared libraries, and sometimes handy if you want to
+# distribute or install the resulting Python binary), run "make
+# python".
+
+# Note: Each time you edit Makefile.pre.in or Setup.in, you must run
+# "./configure" before running "make".
+
+# Hint: if you want to use VPATH, you can start in an empty
+# subdirectory and type (where <srcdir> is the location of the source):
+#   <srcdir>/configure --srcdir=<srcdir>
+#   make
+
+
+# === Bootstrap variables (edited through "./configure") ===
+
+# The prefix used by "make inclinstall libainstall" of core python
+prefix=		@prefix@
+
+# The exec_prefix used by the same
+exec_prefix=	@exec_prefix@
+
+# Source directory and VPATH (for VPATH builds).
+srcdir=		@srcdir@
+VPATH=		@srcdir@
+
+# === Variables that you may want to customize (rarely) ===
+
+# (Static) build target
+TARGET=		python
+
+# Add more -I and -D options here
+CFLAGS=		$(OPT) -I$(INCLUDEPY) -I$(LIBPL) $(DEFS) \
+		@CPPFLAGS@ @DEBUG@ -D_REENTRANT -D_GNU_SOURCE \
+		-DPOSTGRESQL_MAJOR=@PGSQLMAJOR@ \
+		-DPOSTGRESQL_MINOR=@PGSQLMINOR@
+
+# These two variables can be set in Setup to merge extensions.
+# See example[23].
+BASELIB=	
+BASESETUP=	
+
+# === Variables set by makesetup ===
+
+MODOBJS=	_MODOBJS_
+MODLIBS=	_MODLIBS_
+
+# === Definitions added by makesetup ===
+
+# === Variables from configure ===
+
+VERSION=	@VERSION@
+CC=		@CC@
+LINKCC=		@LINKCC@
+SGI_ABI=	@SGI_ABI@
+OPT=		@OPT@
+LDFLAGS=	@LDFLAGS@
+LDLAST=		@LDLAST@
+DEFS=		@DEFS@
+LIBS=		@LIBS@
+LIBM=		@LIBM@
+LIBC=		@LIBC@
+RANLIB=		@RANLIB@
+MACHDEP=	@MACHDEP@
+SO=		@SO@
+LDSHARED=	@LDSHARED@
+BLDSHARED=      @LDSHARED@
+CCSHARED=	@CCSHARED@
+LINKFORSHARED=	@LINKFORSHARED@
+@SET_CCC@
+
+#the python executable (from configure)
+PYTHON = @PYTHON@
+
+# the framework for MacOS X (this will be fixed into a configure 
+# options if necessary but right now hardcoding "Python" should do)
+PYTHONFRAMEWORK = Python
+
+# Install Stuff
+INSTALL = @INSTALL@ 
+PY_LIB_DIR = @PYTHON_LIBRARY_DIR@
+PY_MOD_DIR = @PYTHON_MODULE_DIR@
+
+# === Fixed definitions ===
+
+# Shell used by make (some versions default to the login shell, which is bad)
+SHELL=		/bin/sh
+
+# Expanded directories
+BINDIR=		$(exec_prefix)/bin
+LIBDIR=		$(exec_prefix)/lib
+MANDIR=		$(prefix)/man
+INCLUDEDIR=	$(prefix)/include
+SCRIPTDIR=	$(prefix)/lib
+
+# Detailed destination directories
+BINLIBDEST=	$(LIBDIR)/python$(VERSION)
+LIBDEST=	$(SCRIPTDIR)/python$(VERSION)
+INCLUDEPY=	$(INCLUDEDIR)/python$(VERSION)
+LIBP=		$(exec_prefix)/lib/python$(VERSION)
+
+LIBPL=		$(LIBP)/config
+
+# === Fixed rules ===
+
+# Default target.  This builds shared libraries.
+default:	sharedmods
+
+# Build shared libraries from our extension modules
+sharedmods:	$(SHAREDMODS)
+
+# Target to build a pyc file from a py file:
+.py.pyc:
+	$(PYTHON) -c "import py_compile; py_compile.compile('$<')"
+
+.SUFFIXES: .py .pyc
+
+# Target to install scripts and modules
+install: install-shmods 
+install-shmods: $(SHAREDMODS)
+	@echo 'Installing shared modules...'
+	@if [ -n "$(SHAREDMODS)" ]; then \
+	  for mod in $(SHAREDMODS); do \
+	    echo "  install -m 555 $$mod $(PY_MOD_DIR)"; \
+	    $(INSTALL) @INSTALLOPTS@ -m 555 $$mod $(PY_MOD_DIR); \
+	  done; \
+	fi
+
+# Handy target to remove intermediate files and backups
+clean:
+		-rm -f *.o *~
+#		cd doc && make clean
+
+# Handy target to remove everything that is easily regenerated
+clobber:	clean
+		-rm -f *.a tags TAGS config.c Makefile.pre python
+		-rm -f *.so *.sl so_locations
+		-rm -fr psycopg-@PACKAGE_VERSION@ \
+			psycopg-@PACKAGE_VERSION@.tar.gz
+		-rm -f typeobj_builtins.c pgtypes.h
+		-rm -fr lib
+		-rm -f config.status config.log config.cache
+		find . -name ".#*" | xargs rm -fr
+		find . -name "*~" | xargs rm -fr
+#		cd doc && make distclean
+
+# Handy target to delete anything not in cvs
+distclean:	clobber
+		-rm -f Makefile Setup config.h
+		-rm -fr psycopgmodule.so* ZPsycopgDA-* psycopg-*
+
+# Handy target to spit out a distribution tarball
+dist: clobber typeobj_builtins.c pgtypes.h
+	autoconf
+	mkdir psycopg-@PACKAGE_VERSION@
+	cp AUTHORS COPYING INSTALL README TODO NEWS CREDITS SUCCESS \
+	   RELEASE-1.0 FAQ VERSION \
+	   ChangeLog Makefile.pre.in Setup.in configure.in configure \
+	   aclocal.m4 \
+		psycopg-@PACKAGE_VERSION@/	
+	cp autogen.sh buildtypes.py module.c module.h cursor.c connection.c \
+		typeobj.h typeobj.c typeobj_builtins.c typemod.h typemod.c \
+		config.h.in asprintf.c pgtypes.h psycopg-@PACKAGE_VERSION@/
+	cp *.msvc *.win32 VERSION.msvc.pre config32.h psycopg.spec \
+	        psycopg-@PACKAGE_VERSION@/
+	cp -ra tests doc debian ZPsycopgDA psycopg-@PACKAGE_VERSION@/
+#	cp -ra ../GeoTypes psycopg-@PACKAGE_VERSION@/
+	find psycopg-@PACKAGE_VERSION@/ -name CVS | xargs rm -fr
+	find psycopg-@PACKAGE_VERSION@/ -name .svn | xargs rm -fr
+	tar cf psycopg-@PACKAGE_VERSION@.tar psycopg-@PACKAGE_VERSION@/
+	gzip -f9 psycopg-@PACKAGE_VERSION@.tar
+
+# Generate type definitions from postgres header files
+typeobj_builtins.c:
+	awk '/.+OID[ \t]+[0-9]+/ {print $$2 " " $$3}' @PGSQLTYPES@ | \
+		python buildtypes.py >typeobj_builtins.c
+
+typeobj.o: typeobj_builtins.c
+
+pgtypes.h:
+	awk '/.+OID[ \t]+[0-9]+/ {print "#define " $$2 " " $$3}' \
+	  @PGSQLTYPES@ > pgtypes.h
+cursor.o: pgtypes.h
+
+# Package the zope adapter
+dist-zope: clobber
+	rm -fr lib
+	mkdir lib && mkdir lib/python && mkdir lib/python/Products
+	cp -pR ZPsycopgDA lib/python/Products/
+	find lib -name CVS | xargs rm -fr
+	find lib -name .svn | xargs rm -fr
+	tar cf ZPsycopgDA-@PACKAGE_VERSION@.tar lib
+	gzip -f9 ZPsycopgDA-@PACKAGE_VERSION@.tar
+
+# Install the zope adapter
+install-zope: dist-zope
+	@if test -z "@ZOPEHOME@" ; then \
+	  echo ; \
+	  echo To install ZPsycopgDA you have to specify a Zope install ; \
+	  echo directory with --with-zope=DIR in ./configure ; \
+	  echo ; \
+	  exit 1 ; \
+	fi 
+	gzip -dc ZPsycopgDA-@PACKAGE_VERSION@.tar.gz | tar xf - -C @ZOPEHOME@
+
+.PHONY: dist-zope install-zope dist
+

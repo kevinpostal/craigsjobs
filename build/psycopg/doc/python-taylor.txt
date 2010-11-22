@@ -1,0 +1,398 @@
+
+  Using Python's Dynamic Features to Encapsulate Relational Database
+			       Queries
+
+			    Richard Taylor
+			 r.taylor@bcs.org.uk
+
+			     October 2002
+			 
+
+Introduction
+
+Connecting to a relational database is one of the most common things
+that programmers expect any programming language to support. In this
+article I hope to show how some of Python's unusual dynamic features
+can be used to provide a flexible interface to a relational database.
+
+Python is well equipped with libraries which give access to many
+RDBMS, including Oracle, DB/2, Informix, PostgreSQL and MySQL as well
+as interfaces to JDBC[1] and ODBC[2]. To ease the task of the
+developer when moving an application between different databases, a
+group of Python users and database module developers have collaborated
+on the specification of a standard database access API known as the
+DB-API, currently at version 2.0. Using the DB-API it is relatively
+simple to port a Python program from one RDBMS to another, assuming
+that any database features that the application uses are available on
+the target database, of course.
+
+The DB-API v2.0 has been around since 1999 and an introduction to it
+can be found on the DB-API Special Interest Group at the Python web
+site [3]. Rather than repeat a detailed guide to the DB-API, which can
+also be found on the web site, this article will concentrate on the
+way in which a simple object wrapper can be layered on top of the
+DB-API. This wrapper provides an abstraction from the simple SQL
+procedural interface provided by the DB-API. My own team uses this
+approach in our database code because it provides some isolation from
+changes to the database schema and places all of the SQL syntax in the
+one place. It also makes the main application code more "Pythonic" by
+wrapping the database records with objects.
+
+This approach demonstrates how Python's dynamic interpretation
+features can be used to make an abstract interface that is highly
+flexible.
+
+Using the DB-API
+
+Listing 1 shows a simple example of using a DB-API database adapter,
+in this case it is the PostgreSQL adapter psycopg[4]. psycopg is tuned
+for highly multi-threaded applications and has proved very reliable in
+the applications in which we have used it. The example code here
+should be portable to any of the DB-API compliant modules, with the
+possible exception of the connection string which is likely to be
+specific to each database adapter.
+
+
+	 import psycopg
+
+	 cnx = psycopg.connect("user=postgres dbname=db_test")
+	 cr = cnx.cursor()
+	 cr.execute('create table telephone ("name" text, "tel" text)')
+	 cr.execute("insert into telephone values ('Richard', '12345678')")
+	 cr.execute("insert into telephone values ('Steve', '01002030')")
+	 cr.execute("select name, tel from telephone")
+	 cnx.commit()
+	 result = cr.fetchall()
+
+	 print result
+
+	 [('Richard', '12345678'), ('Steve', '01002030')]
+
+		  Listing 1 - Simple DB API example
+
+This example creates a single table, inserts a couple of rows and then
+pulls them back out. The DB API adaptor returns the result set as a
+list of tuples. The final line is the output from running the
+script. You can see from this example that the Python print statement
+understands how to turn Python data structures into human readable
+form. This is very useful when debugging an application, particularly
+because Python's dynamic type system means that you can be unsure of
+the type of the variable that is being printed. 
+
+Wrapping the records
+
+The low-level API used in Listing 1 provides all the functions
+required to store and retrieve data in a database. However, littering
+an application with literal SQL strings and duplicate code to unpack
+the records from the return list can be tedious. In large applications
+it can also lead to poorly maintainable code that is highly
+susceptible to changes in the database schema.
+
+The Record class in Listing 2 provides a object that can represent one
+of the tuples in the return list from the DB-API "fetchall"
+function. The class constructor uses the description provided by the
+DB-API to dynamically construct an object that appears to have an
+attribute for each of the fields in the database record. This is
+achieved through the use of the special __getattr__ method. Python
+classes have a small number of special methods which, if overloaded
+can change the way an object behaves. __getattr__ is called by the
+interpreter when an attempt is made to access an undefined attribute
+of an object. This is possible because Python objects hold references
+to their attributes and methods in a special attribute called
+__dict__. The interpreter interrogates this dictionary when an
+attribute or method is accessed and if no match is found the
+__getattr__ method is called. The __dict__ dictionary can be
+manipulated directly at runtime to change the behavior of the
+object. Careful examination of the code in Listing 2 will reveal how
+the __dict__ attribute and the __getattr__ method can be combined to
+dynamically give an object attributes that correspond to the columns
+returned by a database query. Listing 3 shows how this new Record
+class can be used to encapsulate the records returned from the
+database.
+
+
+  class Record:
+    """A simple class used to wrap the database records returned
+    from a DB-API compliant database module"""
+
+    def __init__(self, description, values):
+      """The record constructor.
+
+      The description parameter should be the contents of the
+      cursor.description attribute after the call to
+      cursor.execute(). The values parameter should be a list
+      of field values in the same order as they are returned
+      from the cursor.fetchXXX() call."""
+
+      # The cursor.description attribute is a list of
+      # tuples, where the first element of each tuple is the
+      # field name. To make the name lookups a little easier
+      # a list of field names is extracted from the description.
+
+      field_names = [ d[0] for d in description ]
+
+      # A dictionary of (field name, field value) pairs is
+      # constructed, keyed on the field name. This is then
+      # used by the __getattr__ and __setattr__ methods
+      # to perform the field lookups. This must be explicitly
+      # added to the __dict__ dictionary in order to shield it
+      # from the __setattr__ method defined below.
+
+      self._values = {}
+      for field_num in range (0,len(field_names)) :
+	self._values[field_names[field_num]] = values[field_num]
+
+    def __getattr__(self, attr):
+      """This overrides the attribute access method to look up
+      attributes in the database field names if they are not
+      found in the objects dictionary first."""
+
+      if self._values.has_key(attr):
+	return self._values[attr]
+
+      raise AttributeError
+
+    def __setattr__(self, attr, value):
+      """This overrides the attributes assignment method to
+      ensure that any assignments to database fields are
+      applied to the _values dictionary."""
+
+      if self.__dict__.has_key('_values') and \
+	self.__dict__['_values'].has_key(attr):
+	self.__dict__['_values'][attr] = value
+      else:
+	self.__dict__[attr] = value
+
+		  Listing 2 - A simple Record class
+
+  cr.execute("select name, tel from telephone")
+  cnx.commit()
+  records = []
+  for row in cr.fetchall():
+    records.append(Record(cr.description, row))
+
+  for record_object in records:
+    print "Name = %s Tel = %s" % (record_object.name, record_object.tel) 
+
+		  Listing 3 - Using the Record class
+
+The Record class in Listing 2 also defines a __setattr__ method. This
+is another of Python's special methods: it enables assignment to
+attributes to be as dynamic as attribute access. However there is an
+important subtle difference between __getattr__ and __setattr__:
+whereas __getattr__ is called only when no matching attribute can be
+found, __setattr__ is always called first and only if __setattr__
+raises an exception will the interpreter search the rest of an
+object's attributes. The alert reader will spot that this could easily
+lead to an infinite recursion if the body of the __setattr__ method
+accesses an attribute of "self". To alleviate this problem access to
+the special __dict__ attribute does not cause a call to the
+__setattr__ method. This one special case enables __setattr__ to be
+used effectively, if with some care.
+
+Having provided the ability to assign new values to the database
+fields of the Record class the obvious next step is to be able to
+write the updated values back to the database. Listing 4 introduces a
+View class to manage the information needed to construct update
+queries and provide select query methods for a table.
+
+
+  class View:
+    """A class to manage access to a database view."""
+
+    def __init__(self, tablename, record_class):
+      """The view constructor.
+
+      The tablename parameter should be a string holding the
+      name of a table that has already been created in the
+      database. The record_class parameter should be a class
+      object that provides the same constructor interface as
+      the Record class below. """
+
+      self.tablename = tablename
+      self.record_class = record_class
+
+    def fetchall(self, cr):
+      """Accessor method. Returns all of the records in a table.
+
+      The return value is a list of record_class objects populated
+      with the table rows returned from a select * query."""
+
+      cr.execute("select * from %s" % self.tablename)
+
+      return [ self.record_class(self,cr.description, row_values) \
+	for row_values in cr.fetchall() ]
+
+		   Listing 4 - A simple View class
+
+The View class is fairly straightforward but there are a couple of
+points worth noting. First, the record_class parameter to the __init__
+method is a class object not a class instance. In Python class
+definitions are first class objects themselves and can be passed as
+parameters just as their instances can. This enables a type of generic
+programming. In the View class the record_class object is used to
+instantiate the record objects in the fetchall function. Second, the
+construct used in the return statement of the fetchall function,
+denoted by the square brackets, is known as a list comprehension. List
+comprehensions are a convenient way of constructing anonymous lists
+and can be used as an alternative syntax to the functional programming
+functions map and filter[5]. A full explanation of list comprehensions
+can be found at [6].
+
+Listing 5 shows a new version of the Record class that makes use of
+the View class to implement an update method. The __getattr__ and
+__setattr__ methods have been omitted because they are identical to
+those in Listing 2. The update method writes the record fields back to
+to the database. It is worth noting the use of copy.deepcopy in the
+update method. As you would expect, simply assigning a dictionary to a
+new name only creates a new reference to the dictionary. copy.deepcopy
+creates a new dictionary with a copy of each element of the original.
+
+
+  class Record:
+    """A simple class used to wrap the database records returned
+    from a DB-API compliant database module"""
+
+    def __init__(self, view, description, values):
+      """The record constructor.
+
+      The description parameter should be the contents of the
+      cursor.description attribute after the call to
+      cursor.execute(). The values parameter should be a list
+      of field values in the same order as they are returned
+      from the cursor.fetchXXX() call."""
+
+     # Remember the view object reference.
+
+      self.view = view
+
+      # The description attribute is a list of tuples, where
+      # the first element of each tuple is the
+      # field name. To make the name lookups a little easier
+      # a list of field names is extracted from the description.
+
+      self.field_names = [ d[0] for d in description ]
+
+      # A dictionary of field name, field value pairs is
+      # constructed, keyed on the field name. This is then
+      # used by the __getattr__ and __setattr__ methods
+      # to perform the field lookups. This must be explicitly
+      # added to the __dict__ dictionary in order to shield it
+      # from the __setattr__ method defined below. A second
+      # copy is created to be used in the where clauses of
+      # update queries.
+
+      self._values = {}
+      self._original_values = {}
+
+      for field_num in range (0,len(self.field_names)) :
+	self._values[self.field_names[field_num]] \
+	  = values[field_num]
+	self._original_values[self.field_names[field_num]] \
+	  = values[field_num]
+
+    def update(self, cr):
+      """Write back changes made to a record to the database.
+
+      The cr parameter should be an open cursor object and it is
+      the responsibility of the caller to ensure that commit is
+      called on the cursor if autocommit mode is not used."""
+
+      s = "update %s set " % (self.view.tablename,)
+
+      new_field_values = []
+      for field in self.field_names:
+	new_field_values.append("%s = '%s'" \
+	  % (field, self._values[field]))
+
+      s = s + string.join(new_field_values,' , ') + " where "
+
+      old_field_values = []
+      for field in self.field_names:
+	old_field_values.append("%s = '%s'" \
+	% (field,self._original_values[field]))
+
+      s = s + string.join(old_field_values,' and ')
+
+      cr.execute(s)
+
+      self._original_values = \
+	copy.deepcopy(self._values)
+
+	  Listing 5 - Record class with with update method.
+
+Listing 6 demonstrates how the View and Record classes can be put
+together to access and manipulate the database records of a table
+without ever explicitly stating what the fields of the record
+are. Additional fields can be added to the tables without requiring
+any alteration to the classes and no table specific SQL sytax is
+required in the main application code.
+
+
+  # Create a new cursor (assumes the lead in code from Listing 1).
+  cr = cnx.cursor()
+
+  view = View("telephone", Record) # Create a view object for
+				   # the telephone table.
+
+  records = view.fetchall(cr) # Fetch a list of all records 
+			      # in the telephone table.
+
+  records[0].name = "new name" # alter a field in the first record
+  records[0].update(cr) # write altered record back to db.
+
+		 Listing 6 - Putting it all together.
+
+Taking it further
+
+By sub-classing View and Record it is very simple to add more complex
+capabilities. For instance calculated fields could be added to records
+or complex query methods added to views. By encapsulating business
+logic in subclasses of View and Record it is possible to ensure that
+such logic is as independent of the details of the database interface
+and schema as possible. One technique that I have used in my
+applications is to insert name mapping into the __getattr__ and
+__setattr__ methods when a database field name changes. This can
+enable such changes to happen without altering any of the business
+logic that would otherwise have to be kept in step.
+
+The implementations of View and Record presented here are obviously
+missing many useful features such as dealing with field types other
+than strings, views that are made from joins across multiple tables,
+inserting new records into tables etc. There is also no attempt to
+catch any errors. However, hopefully I have shown how Python's highly
+dynamic nature might be used to add all of these features in a very
+flexible manner.
+
+Final thoughts
+
+This article has demonstrated how features such as dynamic attribute
+lookup and class definitions as first class objects can be used to
+build flexible abstractions in Python. I have used such techniques
+extensively in the applications on which I have worked. However, I
+have also learned through bitter experience that such techniques can
+cause faults that, because Python has little compile time checking,
+only become apparent at run time and can prove very hard to
+find. These problems can be alleviated with judicious use of pre- and
+post-conditions on methods along with careful use of exception
+handlers to recover from runtime errors.
+
+Reading back through this article it also occurs to me that I may give
+the impression that Python is full of special case rules and littered
+with built-in method names. This is not the case. There are in
+practice only a small number of special cases to learn and it is
+extreamly rare to be tripped up by a built-in method that you have
+overloaded by accident. Most of the time Python can be used in
+blissful ignorance of the machinery that enables the dynamic features
+that I have used in this article.
+
+Richard Taylor
+r.taylor@bcs.org.uk
+
+References
+[1] JDBC: http://www.ziclix.com/zxjdbc/
+[2] ODBC Module: http://www.python.org/windows/win32/odbc.html
+[3] Python Database API Specification v2.0: http://www.python.org/peps/pep-0249.html
+[4] Psycopg Home Page: http://initd.org/software/psycopg
+[5] Functional programming in Python: http://www-106.ibm.com/developerworks/library/l-prog.html
+[6] What's New in Python 2.0: http://www.amk.ca/python/2.0/

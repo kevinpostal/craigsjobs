@@ -1,0 +1,128 @@
+AC_INIT(psycopg, 1.1.21, psycopg@lists.initd.org)
+AC_CONFIG_SRCDIR(config.h.in)
+AC_PREREQ(2.53)
+
+dnl create old VERSION file, needed to debian and win32 builds
+AC_CONFIG_COMMANDS_PRE([echo $PACKAGE_VERSION >VERSION])
+
+dnl lets save the LIBS before PY_INIT damages them
+GIVENLIBS="$LIBS"
+PY_INIT
+LIBS="$GIVENLIBS $LIBS"
+
+dnl enable developer extensions, like debugging messages
+AC_ARG_ENABLE(devel,
+    [  --enable-devel[=ARG]    Enable developer mode], 
+    DEVEL="yes")
+
+if test "$DEVEL" = "yes" ; then
+  DEBUG="-DPSYCOTIC_DEBUG"
+  INSTALLOPTS=""
+else
+  DEBUG="-DNDEBUG"
+fi
+AC_SUBST(DEBUG)
+AC_SUBST(INSTALLOPTS)
+
+dnl look for a compiler and compiler carateristics 
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_MAKE_SET
+AC_C_INLINE
+
+dnl where is zope? we want to install ZpsycopgDA as a Zope product!
+AC_ARG_WITH(zope, 
+    [  --with-zope=DIR         Install Zope product [don't install]],
+     ZOPEHOME="$withval", ZOPEHOME="")
+AC_SUBST(ZOPEHOME)
+
+dnl postgresql headers and libraries (by default in /usr/lib and 
+dnl /usr/include/postgresql, can be changed with --with-postgres-* options)
+AC_ARG_WITH(postgres-libraries, [  --with-postgres-libraries=DIR  
+                          PostgreSQL libs in DIR [PREFIX/lib]],
+            PGSQLLIBS="-L$withval", PGSQLLIBS="")
+AC_ARG_WITH(postgres-includes, [  --with-postgres-includes=DIR
+                          PostgreSQL includes in DIR [PREFIX/include/postgresql]],
+            PGSQLDIR="$withval", PGSQLDIR="")
+
+if test -z "$PGSQLDIR" ; then
+  CPPFLAGS="$CPPFLAGS -I$prefix/include/postgresql"
+  PGSQLDIR="$prefix/include/postgresql"
+else
+  CPPFLAGS="$CPPFLAGS -I$PGSQLDIR"
+fi
+if test -z "$PGSQLLIBS" ; then
+  PGSQLLIBS="-L$prefix/lib"
+fi
+LDFLAGS="$PGSQLLIBS $LDFLAGS"
+
+AC_MSG_CHECKING(PostgreSQL version)
+if test -f $PGSQLDIR/pg_config.h ; then
+  PGSQLCONFIG=$PGSQLDIR/pg_config.h
+else
+  if test -f $PGSQLDIR/config.h ; then
+    PGSQLCONFIG=$PGSQLDIR/config.h
+  else
+    if test -f $PGSQLDIR/../pg_config.h ; then
+      PGSQLCONFIG=$PGSQLDIR/../pg_config.h
+    fi
+  fi
+fi
+test -z "$PGSQLCONFIG" && AC_MSG_ERROR(missing PostgreSQL headers)
+PGSQLVERSION="`sed -n -e 's/.*PG_VERSION \"\([[0-9]]\.[[0-9]]\).*\"/\\1/p' $PGSQLCONFIG`"
+AC_MSG_RESULT($PGSQLVERSION)
+
+AC_MSG_CHECKING(PostgreSQL type catalog)
+if test -d $PGSQLDIR/catalog ; then
+  PGSQLTYPES="$PGSQLDIR/catalog/pg_type.h"
+else
+  if test -d $PGSQLDIR/server/catalog ; then
+    PGSQLTYPES="$PGSQLDIR/server/catalog/pg_type.h"
+    PGSQLDIR="$PGSQLDIR/server"
+    CPPFLAGS="$CPPFLAGS -I$PGSQLDIR"
+  else
+    if test -d $PGSQLDIR/postgresql/server/catalog ; then
+      PGSQLTYPES="$PGSQLDIR/postgresql/server/catalog/pg_type.h"
+      PGSQLDIR="$PGSQLDIR/postgresql/server"
+      CPPFLAGS="$CPPFLAGS -I$PGSQLDIR"
+    fi
+  fi
+fi
+test -z "$PGSQLTYPES" && AC_MSG_ERROR(pg_type.h not found)
+AC_MSG_RESULT($PGSQLTYPES)
+
+dnl same with the mx header files
+AC_ARG_WITH(mxdatetime-includes, [  --with-mxdatetime-includes=DIR   
+                          MX DateTime includes in DIR [PREFIX/include]],
+            CPPFLAGS="$CPPFLAGS -I$withval")
+
+AC_MSG_CHECKING(for mxDateTime.h)
+AC_TRY_CPP([#include <mxDateTime.h>], ,
+  AC_MSG_ERROR(can't build without mx headers))
+AC_MSG_RESULT(yes)
+
+dnl libcrypt, libpq
+AC_CHECK_LIB(crypt, main,,
+  AC_CHECK_LIB(crypto, main,,
+    AC_MSG_WARN([next test may fail if you don't have libcrypt or libcrypto])))
+
+AC_CHECK_LIB(pq, PQconnectStart, PGSQLLIBS="$PGSQLLIBS -lpq $LIBS",
+    AC_MSG_ERROR(can't build without PostgreSQL libraries))
+AC_CHECK_LIB(pq, PQfreeNotify, CPPFLAGS="$CPPFLAGS -DHAVE_PQFREENOTIFY") 
+AC_SUBST(PGSQLLIBS)
+AC_SUBST(PGSQLDIR)
+AC_SUBST(PGSQLTYPES)
+
+# define psotgresql major and minor version
+PGSQLMAJOR=`echo $PGSQLVERSION | sed -n -e 's/\(.\)\../\\1/p'`
+PGSQLMINOR=`echo $PGSQLVERSION | sed -n -e 's/.\.\(.\)/\\1/p'`
+AC_SUBST(PGSQLMAJOR)
+AC_SUBST(PGSQLMINOR)
+
+dnl check for specific functions that can be missing
+AC_REPLACE_FUNCS(asprintf)
+
+dnl AC_SUBST(LIBOBJS)
+AC_SUBST(CPPFLAGS)
+
+PY_OUTPUT(Makefile, Setup, config.h)

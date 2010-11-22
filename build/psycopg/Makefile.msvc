@@ -1,0 +1,144 @@
+# Makefile for Microsoft Visual C++ 5.0 (or compat)
+#
+# Will build python import dll and copy to $(PYTHON)\libs
+# Default is to compile against the libpq.dll.  If the libpq functions are to
+#  be compiled in, set LIBPQSTATIC=1.
+
+!IF "$(OS)" == "Windows_NT"
+NULL=
+!ELSE
+NULL=nul
+!ENDIF
+
+
+# Modify below to point to where your code is at.   Root directories.
+#   PYTHON is where the distribution of python is installed
+#   POSTGRESQL is where the source to postgreSQL is at
+#   MX is where the source to MX is at
+# Also note that one may need to change the two included library definitions
+#   below, if compiling with a version of Python other than 2.2:
+#     MX_LIB
+#     PYTHON_LIB
+#
+PYTHON=C:\bin\python22
+POSTGRESQL=D:\POSTGRESQL-7.2.1
+MX=D:\egenix-mx-base-2.0.3
+
+
+# My preprocessor trickery to determine what version of psycopg we are
+#   compiling.  How this works is that we copy over a predefined string
+#   into a file and then append the version that is in the VERSION file.
+#   Finally, we include that file and it acts as a MACRO, which we can
+#   pass on the command line down below.
+!IF ![ copy VERSION.msvc.pre version.msvc]
+!IF ![ type VERSION >> version.msvc ]
+!INCLUDE version.msvc
+!ELSE
+!ERROR "There was a problem creating PACKAGE_VERSION: VERSION"
+!ENDIF
+!ELSE
+!ERROR "There was a problem creating PACKAGE_VERSION: VERSION.msvc.pre"
+!ENDIF
+
+
+# This is the old version of the preprocessor trickery, before the VERSION
+#   variable was put into a separate file.
+# My preprocessor trickery to determine what version of psycopg we are
+#   compiling.  How this works is that we windows 'grep' for the string
+#   PSYCOPG_VERSION in the configure file and save that off to version.msvc.
+##!IF !EXIST(version.msvc)
+#!IF ![ findstr "^PSYCOPG_VERSION" configure > version.msvc ]
+#!INCLUDE version.msvc
+#!ELSE
+#!ERROR "There was a problem finding the PSYCOPG_VERSION string"
+#!ENDIF
+##!ELSE
+##!INCLUDE version.msvc
+##!ENDIF
+
+
+
+OBJDIR=.\OBJ    # Directory where the objects are made
+OUTDIR=.        # Driectory where the resulting DLL is located
+#LIBPQSTATIC=1   # Define if to compile against the static lib of LIBPQ
+
+
+# Include Directories
+LIBPQ_INC=$(POSTGRESQL)\src\interfaces\libpq
+PG_INC=$(POSTGRESQL)\src\include
+PYTHON_INC=$(PYTHON)\include
+MX_INC=$(MX)\mx\DateTime\mxDateTime
+
+# Libraries
+!IFDEF LIBPQSTATIC
+LIBPQ_LIB=$(POSTGRESQL)\src\interfaces\libpq\Release\libpq.lib
+!ELSE
+LIBPQ_LIB=$(POSTGRESQL)\src\interfaces\libpq\Release\libpqdll.lib
+!ENDIF
+MX_LIB=$(MX)\build\temp.win32-2.2\Release\mx\DateTime\mxDateTime\mxDateTime\mxDateTime.lib
+PYTHON_LIB=$(PYTHON)\libs\python22.lib
+
+
+CC=cl.exe
+CFLAGS=/nologo /c /MD /I$(LIBPQ_INC) /I$(PG_INC) /I$(PYTHON_INC) /I$(MX_INC) /Fo"$(OBJDIR)\\" /DPACKAGE_VERSION=\"$(PACKAGE_VERSION)\" /O2
+
+DLLNAME=psycopg
+LINK=link.exe
+LINK_OBJS = \
+        "$(OBJDIR)\module.obj"      \
+        "$(OBJDIR)\connection.obj"  \
+        "$(OBJDIR)\cursor.obj"      \
+        "$(OBJDIR)\typeobj.obj"     \
+        "$(OBJDIR)\typemod.obj"     \
+        "$(OBJDIR)\asprintf.obj"
+
+LINK_LIBS = \
+            msvcrt.lib
+
+!IFDEF LIBPQSTATIC
+LINK_LIBS = \
+            advapi32.lib \
+            wsock32.lib
+LINK_LIBS=kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wsock32.lib
+!ENDIF
+
+LINK_FLAGS=/dll /incremental:no $(LINK_OBJS) $(LINK_LIBS) $(LIBPQ_LIB) $(PYTHON_LIB) $(MX_LIB) /EXPORT:initpsycopg /out:"$(OUTDIR)\$(DLLNAME).pyd"
+
+
+ALL: "$(OUTDIR)\$(DLLNAME).pyd"
+
+CLEAN:
+	-@erase "$(OBJDIR)\module.obj"
+	-@erase "$(OBJDIR)\connection.obj"
+	-@erase "$(OBJDIR)\cursor.obj"
+	-@erase "$(OBJDIR)\typeobj.obj"
+	-@erase "$(OBJDIR)\typemod.obj"
+	-@erase "$(OBJDIR)\asprintf.obj"
+	-@erase "$(OUTDIR)\$(DLLNAME).pyd"
+	-@erase "$(OUTDIR)\$(DLLNAME).lib"
+	-@erase "$(OUTDIR)\$(DLLNAME).exp"
+	-@erase "version.msvc"
+#	-@erase "config.h"
+
+INSTALL: ALL
+	@copy $(OUTDIR)\$(DLL_NAME).pyd $(PYTHON)\dlls
+
+#config.h: config.msvc.h
+#	@copy config.msvc.h config.h
+
+"$(OBJDIR)" :
+    if not exist "$(OBJDIR)/$(NULL)" mkdir "$(OBJDIR)"
+
+"$(OUTDIR)" :
+    if not exist "$(OUTDIR)/$(NULL)" mkdir "$(OUTDIR)"
+
+
+#"$(OUTDIR)\$(DLLNAME).pyd": "$(OUTDIR)" "$(OBJDIR)" $(LINK_OBJS) config.h
+"$(OUTDIR)\$(DLLNAME).pyd": "$(OUTDIR)" "$(OBJDIR)" $(LINK_OBJS)
+	$(LINK) @<<
+        $(LINK_FLAGS)
+<<
+
+.c{$(OBJDIR)}.obj::
+   $(CC) @<<  $(CFLAGS) $<
+<<

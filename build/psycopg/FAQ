@@ -1,0 +1,180 @@
+Frequently Asked Questions about psycopg
+****************************************
+
+Index
+-----
+
+1.   Install problems
+1.1  How do I install ZPsycopgDA with a pre-packaged Zope?
+1.2  What PostgreSQL/Zope are supported?
+1.3  Why the configure script does not find pg_type.h?
+1.4 What do I do if I get a "shared object not started" error?
+
+2.   Distributions and architectures
+2.1  Does psycopg work on Debian GNU/Linux?
+2.2  Does psycopg work on RedHat?
+2.3  Does psycopg work on Mandrake 8?
+
+
+* 1. Install problems
+
+** 1.1  How do I install ZPsycopgDA with a pre-packaged Zope?
+
+[The answer was written by Julio Monteiro and sent to the psycopg
+ mailing list, I just edited it a little bit.]
+
+After installing you pre-packaged version of Zope (and python that
+comes bundled to it), get mxDateTime from:
+
+    http://www.egenix.com/files/python/eGenix-mx-Extensions.html
+
+unpack it and then run:
+
+    $ZOPE_HOME/bin/python setup.py install
+
+where $ZOPE_HOME is the directory where you unpacked Zope. This step
+install the mxDateTime package in the bundled python directories. Then
+download the latest version of psycopg from:
+
+    http://initd.org/software/psycopg
+
+untar it and configure with a command like the following one (all on a
+single line and you'll need to adjust the paths accordingly to your
+PostgreSQL installation, etc.):
+
+    ./configure --with-python=$ZOPE_HOME/bin/python 
+      --with-zope=$ZOPE_HOME 
+      --with-mxdatetime-includes=$ZOPE_HOME/lib/python2.1/site-packages/mx/DateTime/mxDateTime 
+      --with-postgres-includes=/usr/include/postgresql
+
+You may have a problem like:
+
+    /config.status: /lib/python2.1/config/makesetup: Permission denied
+
+Try giving makesetup exec permissions (Zope does not do it by default.)
+
+Then you will need to modify the Makefile by hand around line 90,
+where it sets CFLAGS, just add:
+
+    -I/path/to/zope/include/python2.1/
+
+Then run:
+
+    make
+    make install
+    make install-zope
+
+after make install, you will have the file 'psycopgmodule.so' located
+in your zope root folder. That won't do, so you have to move the file
+to $ZOPE_HOME/lib/python2.1/lib-dynload/.
+
+That's all!
+
+** 1.2  What PostgreSQL/Zope are supported?
+
+psycopg supports any PostgreSQL version from 7.x up. Almost any `modern'
+Zope, from 2.3.xup works. Python 1.5.x, 2.1.x and 2.2.x are
+supported. psycopg can be modified to work wih PostgreSQL 6.x but nobody
+really wants to use it nowdays.
+
+** 1.3 Why the configure script does not find pg_type.h?
+
+PostgreSQL build procedure does not install all the headers. Make sure
+to install them with "make install-all-headers", as documented in
+Chapter 1, section 1.5 of the Postgres 7.2 Admin Guide pdf document.
+
+Also, if you don't want/can't compile the database for yourself, make
+sure that you install a package that provides postgresql header
+files. Often these packages have a name similar to the database package
+but containing the word 'dev'.
+
+** 1.4 What do I do if I get a "shared object not started" error?
+
+Your dynamic linker does not find the PostgreSQL libraries. You have two
+options: reinstall POstgreSQL by telling the configure script to put the
+libraries in some standard place:
+
+    ./configure --includedir=/usr/include/pgsql --libdir=/usr/lib
+
+or just configure the dynamic linker search path either by modifying its
+configuration file (/etc/ld.so.conf) or by defining the LD_LIBRARY_PATH
+environment variable. (This works on GNU/Linux, on other systems your
+mileage may vary.)
+
+* 2.   Distributions and architectures
+
+** 2.1  Does psycopg work on Debian GNU/Linux?
+
+Yes, it works both on 2.3 (potato, packages available from psycopg
+homepage) and 3.0 (woody, sinply apt-get it from the nearest Debian
+mirror.)
+
+** 2.2  Does psycopg work on RedHat?
+
+There are no official psycopf RPMs, but from 1.0.6 onward the psycopg
+distribution include a spec file for building RPM packages. Modify it
+with your favourite editor and then issue the build command as
+explained in the first lines of the psycopg.spec file.
+
+UPDATE: we now have RPMs on the website (the distribution still includes
+the spec file, though.)
+
+** 2.3 Does psycopg work on Madrake?
+
+Yes, but installing it can be quite difficult, especially if using a
+pre-packaged Zope. Here is some info sent by a Mandrake user:
+
+Install Zope by unzipping first using:
+
+    tar -zxvf Zope-2.5.1-linux2-x86.tgz
+    mv Zope-2.5.1-linux2-x86 Zope-2.5.1
+
+and then follow the Zope "INSTALL.txt" found in the subfolder "doc/" At
+the end of this you should have Zope-2.5.1 folder in your home folder.
+
+If you are using Mandrake ver 8.2 (should work for 8.1 also) then you
+need get Python2.1 because Mandrake installs Python2.2 by default. Go to
+www.python.org and under the download section get the following rpms:
+
+    python2.1-2.1.3-1.i386.rpm
+    python2.1-devel-2.1.3-1.i386.rpm
+
+and install them (using the rpm --nodeps switch if necessary.) This step
+might be absolutely necessary for most installations cause you may not
+have Python development libraries. Don't skip this.
+
+Now we can proceed to install egenix as below. Make sure exit the root
+login and are back in your home folder.
+
+    tar -zxvf egenix-mx-base-2.0.3.tar.gz
+    cd egenix-mx-base-2.0.3
+    ~/Zope-2.5.1/bin/python setup.py install
+
+Next lets install psycopg (finally!)
+
+    tar -zxvf psycopg-1.0.8.tar.gz
+    cd psycopg-1.0.8
+    ./configure --with-postgres-libraries=/usr/lib
+      --with-postgres-includes=/usr/include/pgsql
+      --with-mxdatetime-includes=/usr/lib/python2.1/site-packages/mx/DateTime/mxDateTime
+      --with-zope=~/Zope-2.5.1 --with-python=~/Zope-2.5.1/bin/python
+      --with-python-version=2.1 --with-python-exec-prefix=/home/zope/Zope-2.5.1
+    make && make install && make install-zope
+
+If the last step fails just move the dir ZPsycopgDA like this:
+
+    mv ZPsycopgDA ~/Zope-2.5.1/lib/python/Products/
+
+And also mv this file which is in your Zope folder:
+
+    mv ~/Zope-2.5.1/psycopgmodule.so ~/Zope.2.5.1/lib/python2.1/lib-dynload/
+
+And eventually:
+
+    ~/Zope-2.5.1/start &
+
+That should do it. I am sure there will be some problems as our
+configurations differ and also since most of you out there are newbies
+like me so just post on the mailing lists like I did.  That helps cause
+you get some clues that will guide your thinking to your specific
+problem.
